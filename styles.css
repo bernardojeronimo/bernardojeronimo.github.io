@@ -16,8 +16,9 @@ p {
     font-size: 30px ;
 }
 ul {
+    margin: auto;
     font-size: 20px;
-    margin-left: 630px;
+    margin-left: 50px;
 }
 
 h2{
