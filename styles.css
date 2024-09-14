@@ -4,64 +4,26 @@ body {
 h1 {
     color: antiquewhite;
     font-size: 300px ;
-    margin-top: -1px;
+    margin-top: 120px;
     text-align: center;
-
 }
 li{
     color: antiquewhite;
 }
 p {
     color: #ffffff;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 23px ;
-    margin-top: 33px;
-    margin-left: 5%;
-    font-style: normal;
-    text-align:left;
+    font-size: 30px ;
 }
 ul {
-    margin-top: 11%;
+    font-size: 20px;
 }
 
-.container {
-    background-color: #695959;
-    width: 750px;
-    height: 350px;
-    border: 7px solid rgb(212, 212, 212);
-    margin: auto;
-    margin-bottom: 2%;
+h2{
+    color:#ffffff;
 }
-
-
-.cont {
-    background-color: #5f7172;
-    width: 930px;
-    height: 410px;
-    border: 7px solid rgb(212, 212, 212);
+img{
+    width: 1480px;
+    height: 8px;
     margin: auto;
-    margin-right: 45%;
-}
-
-.tec {
-    background-color: #181818;
-    width: 330px;
-    height: 150px;
-    border: 7px solid rgb(13, 87, 13);
-    margin: auto;
-    margin-top: -32%;
-    margin-left: 12%;
-}
-
-.im{
-    margin: auto;
-    margin-left: 120%;
-    margin-top: -2%;
-}
-
-
-.im2{
-    margin: auto;
-    margin-left: 145%;
-    margin-top: -9%;
+    margin-left: -10px;
 }
