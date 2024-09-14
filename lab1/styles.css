@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(60, 143, 143);
+}
+
+h1 {
+    color: antiquewhite;
+    font-size: 300px ;
+    margin-top: 120px;
+    text-align: center;
+}
+
+h2{
+    color: #ffffff;
+    font-size: 40px;
+}
+
+h3{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+li{
+    color: #ffffff;
+    font-size: 15px;
+}
+
+p{
+    color: antiquewhite;
+    font-size: 20px;
+}
