@@ -5,24 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizz</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Quizz</h1>
-    <fieldset>
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" required>
+    <header></header>
+    <h1>A minha Cidade</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="local.html">Localização</a>
+        <a href="multimedia.html">Multimédia</a>
+        <a href="info.html">Informação</a>
+        <a href="quizz.html">Quizz</a>
+        <a href="viagem.html">Viagem</a>
+    </nav>
+    <img src="images/montijo.jpg" alt="" width="400" height="200">
+    </header>
+    <main>
+        <h2>Quizz</h2>
+        <form method="get" action="https://postman-echo.com/get" id="quizMontijo"></form>
+        <fieldset>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required>
 
-        <label for="apelido">Apelido:</label>
-        <input type="text" name="apelido" id="apelido" required>
+            <label for="apelido">Apelido:</label>
+            <input type="text" name="apelido" id="apelido" required>
 
-        <label for="email">Email:</label>
-        <input type="text" name="email" id="email" required>
-    </fieldset>
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" required>
+        </fieldset>
 
-    <fieldset>
-        <form method="get" action="https://postman-echo.com/get" id="quizMontijo">
-
+        <fieldset>
             <label for="nomeMontijo">Qual é o nome da cidade onde está a fazer este quiz?</label>
             <input type="text" id="nomeMontijo" name="nomeMontijo" placeholder="Escreva Montijo aqui" size="20"
                 maxlength="30" required autofocus><br><br>
@@ -76,15 +89,20 @@
             <input type="reset" form="quizMontijo" value="Limpar respostas"><br><br>
 
             <input type="submit" form="quizMontijo" value="Submeter Quiz">
-        </form>
+            </form>
 
-        <form action="/lab3/index.html">
+            <form action="/lab3/index.html">
 
-            <br><label for="imgMontijo">Clique na imagem para saber mais sobre Montijo.</label><br>
-            <input type="image" src="images/clickhere.png" alt="Imagem de Montijo" height="300" width="400">
-        </form>
+                <br><label for="imgMontijo">Clique na imagem para saber mais sobre Montijo.</label><br>
+                <input type="image" src="images/clickhere.png" alt="Imagem de Montijo" height="300" width="400">
+            </form>
 
-    </fieldset>
+        </fieldset>
+
+    </main>
+    <footer>
+        <p>DIW 2024</p>
+    </footer>
 </body>
 
 </html>

@@ -1,0 +1,26 @@
+body{
+    background-color:rgb(92, 141, 141);
+}
+
+p{
+    color: aliceblue;
+}
+
+label{
+    color: aliceblue;
+}
+
+fieldset{
+    background-color:rgb(71, 89, 102);
+    border-color: antiquewhite;
+    border-width: 7px;
+}
+
+tr{
+    color: aliceblue;
+}
+
+table{
+    border: 100px;
+
+}
