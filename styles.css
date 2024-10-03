@@ -1,31 +1,96 @@
 body {
-    background-color: rgb(92, 141, 141);
-}
-h1 {
-    color: antiquewhite;
-    font-size: 300px ;
-    margin-top: 120px;
-    text-align: center;
-}
-li{
-    color: antiquewhite;
-}
-p {
-    text-align: center;
-    color: #ffffff;
-    font-size: 30px ;
-}
-ul {
-    margin: auto;
-    font-size: 20px;
-    margin-left: 50px;
+    background-color: rgb(230, 230, 230);
+    color: rgb(218, 210, 210);
+    margin: 0;
+    padding: 0;
 }
 
-h2{
-    color: #ffffff;
+header h1 {
+    background-color: rgba(129, 16, 16, 0.825);
+    color: antiquewhite;
+    font-size: 400px ;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    text-shadow: 10px 2px 5px rgba(199, 174, 174, 0.548);
 }
-img{
+
+header img{
+    border-radius: 2%;
+    margin-top: 20px;
+    margin-left: 10px;
+    width:460px; 
+    height:310px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main{
+    background-color: rgb(247, 247, 247);
+    color: black;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 10px;
+    border-radius: 14px;
+}
+
+main a {
+    color: rgb(207, 9, 9);
+    margin-bottom: 40px;
+    text-decoration: none;
+}
+
+main a:hover {
+    background-color: #414141;
+    border-radius: 5px;
+    color: rgb(252, 92, 92);
+    padding: 7px;
+}
+
+
+main img{
+    width: 100px;
+    height: 100px;
     margin: auto;
-    margin-left: -10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main p{
+    padding-left: 15px;
+}
+
+nav {
+    background-color: #302f2f;
+    padding: 12px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 15px 50px 30px;
+}
+
+nav a {
+    color: rgb(233, 18, 18);
+    margin-left: 5px;
+    margin-right: 4px;
+    margin-bottom: 40px;
+    text-decoration: none;
+}
+
+nav li{
+    margin-bottom: 15px;
+    color: aliceblue;
+}
+
+footer {
+    background-color: #302f2f;
+    padding: 10px;
+    color: rgb(233, 18, 18);
+    text-align: center;
+    margin: 0;
 }
