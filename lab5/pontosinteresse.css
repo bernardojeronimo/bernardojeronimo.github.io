@@ -90,7 +90,7 @@ footer {
     padding-bottom: 10px;
     border-radius: 8px;
     display: block;
-    max-width: 12%;
+    max-width: 20%;
 }
 
 .back fieldset{
@@ -117,5 +117,17 @@ footer {
 .back li{
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+
+.back iframe{
+    width:800px; 
+    height:600px;
+    margin: auto;
+    padding: auto;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    border-radius: 60px;
 }
 
