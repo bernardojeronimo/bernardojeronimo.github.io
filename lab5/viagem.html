@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viagem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Montijo</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+            <a href="quizz.html">Quizz</a>
+            <a href="viagem.html">Viagem</a>
+            <a href="pontosinteresse.html">Pontos de interesse</a>
+        </nav>
+        <img src="images/montijo2_grande.jpg" alt="">
+        <img src="images/montijo.jpg" alt="">
+        <img src="images/montijo1_grande.jpg" alt="">
+    </header>
+    <main>
+        <h2>Viagem</h2>
+        <form method="get" action="https://postman-echo.com/post" id="viagem">
+            <fieldset>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Insira o seu nome" required autofocus>
+
+                <label for="apelido">Apelido:</label>
+                <input type="text" name="apelido" id="apelido" placeholder="Insira o seu apelido" required autofocus>
+
+                <label for="apelido">Email:</label>
+                <input type="email" name="email" id="email" placeholder="exemplo@dominio.com" required
+                    autofocus>
+            </fieldset>
+            <fieldset>
+                <label for="dataPartida">Data de Partida:</label>
+                <input type="date" id="dataPartida" name="dataPartida" required>
+
+                <label for="dataRegresso">Data de Regresso:</label>
+                <input type="date" id="dataRegresso" name="dataRegresso">
+
+                <label for="passageiros">Número de Passageiros:</label>
+                <input type="number" id="passageiros" name="passageiros" min="1" max="100" step="1" placeholder="1">
+
+                <label for="transporte">Meio de Transporte Favorito:</label>
+                <select id="transporte" name="transporte">
+                    <option value="carro">Carro</option>
+                    <option value="comboio">Comboio</option>
+                    <option value="aviao">Avião</option>
+                    <option value="outros">Outros</option>
+                </select>
+
+                <p>Qual o serviço que deseja na sua viagem?</p>
+                <input type="radio" id="basico" name="servico" value="Básico" required>
+                <label for="basico">Básico</label>
+                <input type="radio" id="premium" name="servico" value="Premium">
+                <label for="premium">Premium</label>
+
+                <label for="pedidosEspeciais">Pedidos Especiais:</label><br>
+                <textarea id="pedidosEspeciais" name="pedidosEspeciais" rows="4" cols="50"
+                    placeholder="Insira qualquer pedido especial"></textarea>
+
+                <label for="valorGasto">Valor que espera gastar por pessoa e por dia (€):</label>
+                <input type="number" id="valorGasto" name="valorGasto" min="0" step="0.01" placeholder="0.00">
+
+                <input type="submit" value="Submeter">
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <p>DIW 2024</p>
+    </footer>
+</body>
+
+</html>
