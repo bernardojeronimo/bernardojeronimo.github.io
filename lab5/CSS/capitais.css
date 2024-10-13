@@ -1,69 +1,153 @@
-
 * {
-  margin:0;  
-  padding:0;  
-  box-sizing: border-box; /* medidas sao tomadas da borda */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* medidas sao tomadas da borda */
 }
 
-  header, main, article {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: em;
-  }
-  
-  header {
-    background-color: #282828;
-    color: aliceblue;
-    position: sticky;
-    justify-content: space-between;
-    height: 10vh;
-    padding: 1em;
-    top: 0;
-  }
+header,
+main,
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  main {
-      height: 90vh;
-    background: purple;
-  }
-  
-  article {
-    height: 50vh;
-    width: 100vw;
-    background: rgb(204, 99, 78);
-  }
+header {
+  background-color: #222222;
+  color: aliceblue;
+  position: sticky;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 1.5em;
+  top: 0;
+  z-index: 1;
+}
 
-  article p{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  article:last-child {
-    background: black;
-    color: white;
-  }
-  
-  #poema{
-  }
+main {
+  height: 90vh;
+  background: purple;
+}
 
 nav a {
-    color: rgb(233, 18, 18);
-    margin-left: 15px;
-    text-decoration: none;
+  color: rgb(240, 147, 17);
+  margin-left: 15px;
+  text-decoration: none;
 }
 
 nav a:hover {
-    background-color: #424141;
-    border-radius: 5px;
-    color: rgb(252, 92, 92);
-    padding: 7px;
+  background-color: rgba(154, 128, 91, 0.789);
+  border-radius: 5px;
+  color: rgb(237, 172, 80);
+  padding: 7px;
+}
+
+
+article {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgb(225, 168, 77);
+}
+
+article:last-child {
+  background: black;
+  color: white;
+}
+
+#poema {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.6;
+  font-weight: bolder;
+}
+
+#poema p {
+  display: block;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+
+#paisagens {
+  position: relative;
+  overflow: hidden;
+}
+
+#paisagens img {
+  height: 101vh;
+  width: 100vw;
+}
+
+#paisagens p {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#paisagens p a {
+  color: white;
+  text-decoration: none;
+}
+
+#paisagens p a:hover {
+  text-decoration: underline;
+}
+
+#cidades{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgb(202, 200, 199);
+  width: 100%;
+}
+
+#cidades section {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  background-color: #f0e6e6;
+  border-radius: 20px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+#cidades section:hover {
+  background-color: #e0d5d5; 
+}
+
+#cidades img{
+  width: 100px;
+  border-radius: 20px 0 0 20px;
+}
+
+#cidades div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: calc(100% - 100px); 
+  padding: 20px;
+  color: #222222;
+  font-size: 1.2em;
+  text-align: center;
 }
 
 footer {
-    background-color: #302f2f;
-    padding: 14px;
-    color: rgb(233, 18, 18);
-    text-align: center;
-    margin: 0;
+  background-color: #302f2f;
+  padding: 14px;
+  color: rgb(233, 18, 18);
+  text-align: center;
+  margin: 0;
 }
