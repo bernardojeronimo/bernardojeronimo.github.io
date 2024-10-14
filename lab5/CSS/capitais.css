@@ -105,30 +105,31 @@ article:last-child {
 
 #cidades{
   display: flex;
-  flex-direction: row;
+  flex-direction:row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background-color: rgb(202, 200, 199);
-  width: 100%;
+  width: 130vh;
+  margin:auto;
+  justify-content: center;
+  background-color: rgb(204, 130, 73);
 }
 
 #cidades section {
   display: flex;
-  flex-direction: row;
+  flex-direction:row;
   width: 200px;
+  height: 70px;
   background-color: #f0e6e6;
   border-radius: 20px;
-  margin: 10px;
-  overflow: hidden;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 90px;
 }
 
 #cidades section:hover {
   background-color: #e0d5d5; 
 }
 
-#cidades img{
-  width: 100px;
+#cidades img{ 
   border-radius: 20px 0 0 20px;
 }
 
@@ -138,16 +139,12 @@ article:last-child {
   align-items: center;
   height: 100%;
   width: calc(100% - 100px); 
-  padding: 20px;
+  height: 100%;
   color: #222222;
   font-size: 1.2em;
   text-align: center;
 }
 
-footer {
-  background-color: #302f2f;
-  padding: 14px;
-  color: rgb(233, 18, 18);
-  text-align: center;
-  margin: 0;
+body{
+  background-color: rgb(204, 130, 73);
 }
