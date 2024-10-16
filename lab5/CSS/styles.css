@@ -78,6 +78,10 @@ nav a:hover {
     padding: 7px;
 }
 
+figure img:hover{
+    zoom: 150%;
+}
+
 footer {
     background-color: #302f2f;
     padding: 14px;
@@ -88,6 +92,7 @@ footer {
 
 #fotografias, #video, #poema {
     margin-top: 40px;
+    align-items: center;
 }
 
 #fotografias h3, #video h3, #poema h3 {

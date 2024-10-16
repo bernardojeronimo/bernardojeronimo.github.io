@@ -57,8 +57,7 @@ article:last-child {
   color: white;
 }
 
-#poema {
-  height: 50vh;
+#poema {  
   display: flex;
   justify-content: center;
   align-items: center;
