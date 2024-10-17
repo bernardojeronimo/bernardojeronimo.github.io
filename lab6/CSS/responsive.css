@@ -6,9 +6,10 @@ aside {grid-area: aside-area; background-color: rgb(255, 255, 255);}
 main {grid-area: main-area; background-color: aliceblue;}
 footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
 
+/* mobile */
 @media only screen and (max-width: 767px) {
     body {
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(218, 128, 128);
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -21,12 +22,13 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
 
     header h1{
         grid-area: header-area;
-        background-color: rgba(129, 16, 16, 0.825);
+        background-color: rgba(160, 35, 35, 0.825);
         text-align: center;
         padding: 15px;
         text-transform: uppercase;
         font-size: 30px;
-        color: aliceblue;
+        color: rgb(255, 255, 255);
+        font-family: monospace;
         justify-content: space-between;
         align-items: center;
     }
@@ -34,13 +36,12 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     nav {
         grid-area: menu-area;
         background-color: #302f2f;
-        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
     }
 
-    /* Estilo do menu */
     .menu {
         position: relative;
-        display: inline-block;
     }
 
     .menu .menubtn {
@@ -51,7 +52,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         background-color: inherit;
         font-family: inherit;
         margin: 0;
-        text-align: center;
         cursor: pointer;
     }
 
@@ -59,7 +59,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         display: none;
         position: absolute;
         background-color:#302f2ff3;
-        border-radius: 0px 0px 10px 10px;
+        border-radius: 0px 0px 10px 0px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
@@ -85,7 +85,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
 
     aside {
         grid-area: aside-area;
-        background-color: rgb(255, 255, 255);
+        background-color: inherit;
         text-align: center;
     }
 
@@ -131,6 +131,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         color: rgb(233, 18, 18);
         text-align: center;
     }
+    
 }
 
 /*tablet*/
@@ -141,7 +142,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
 /*portátil*/
 @media only screen and (min-width: 1024px){
     body {
-        background-color: rgb(230, 230, 230);
+        background-color: rgb(255, 255, 255);
         color: rgb(218, 210, 210);
         margin: 0;
         padding: 0;
