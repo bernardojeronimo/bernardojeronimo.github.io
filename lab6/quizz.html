@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {box-sizing: border-box;}
+    </style>
+    <title>Quizz</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Montijo</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+            <a href="quizz.html">Quizz</a>
+            <a href="viagem.html">Viagem</a>
+            <a href="pontosinteresse.html">Pontos de interesse</a>
+            <a href="capitais.html">Capitais</a>
+        </nav>
+        <img src="images/montijo2_grande.jpg" alt="">
+        <img src="images/montijo.jpg" alt="">
+        <img src="images/montijo1_grande.jpg" alt="">
+    </header>
+    <main>
+        <h2>Quizz</h2>
+        <form method="get" action="https://postman-echo.com/get" id="quizMontijo">
+            <fieldset>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Insira o seu nome" required autofocus>
+
+                <label for="apelido">Apelido:</label>
+                <input type="text" name="apelido" id="apelido" placeholder="Insira o seu apelido" required autofocus>
+
+                <label for="apelido">Email:</label>
+                <input type="email" name="email" id="email" placeholder="exemplo@dominio.com" required
+                    autofocus>
+            </fieldset>
+
+            <fieldset>
+                <label for="nomeMontijo">Qual é o nome da cidade onde está a fazer este quiz?</label>
+                <input type="text" id="nomeMontijo" name="nomeMontijo" placeholder="Escreva Montijo aqui" size="20"
+                    maxlength="30" required autofocus>
+
+                <p>Qual é o rio que passa perto de Montijo?</p>
+                <input type="radio" id="tejo" name="rio" value="Tejo" required>
+                <label for="tejo">Tejo</label>
+                <input type="radio" id="douro" name="rio" value="Douro">
+                <label for="douro">Douro</label>
+                <input type="radio" id="guadiana" name="rio" value="Guadiana">
+                <label for="guadiana">Guadiana</label>
+
+                <p>Quais destas são tradições de Montijo? (Escolha várias)</p>
+                <input type="checkbox" id="saoPedro" name="tradicao" value="Festas de São Pedro">
+                <label for="saoPedro">Festas de São Pedro</label>
+                <input type="checkbox" id="tourada" name="tradicao" value="Tourada">
+                <label for="tourada">Tourada</label>
+                <input type="checkbox" id="fado" name="tradicao" value="Festival de Fado">
+                <label for="fado">Festival de Fado</label>
+
+                <label for="ultimaVisita">Quando visitou Montijo pela última vez?</label>
+                <input type="date" id="ultimaVisita" name="ultimaVisita" form="quizMontijo" required>
+
+                <label for="hora">A que horas começa a procissão das Festas de São Pedro?</label>
+                <input type="time" id="hora" name="hora" form="quizMontijo" required>
+
+                <label for="cor">Escolha uma cor que represente Montijo para si.</label>
+                <input type="color" id="cor" name="cor" value="#ff0000" required>
+
+                <label for="visitas">Quantas vezes já visitou Montijo?</label>
+                <input type="number" id="visitasMontijo" name="visitas" min="0" max="100" step="1" placeholder="0"
+                    required>
+
+                <label for="rating">Numere de 1 a 10 o quanto gosta de Montijo.</label>
+                <input type="range" id="rating" name="rating" min="1" max="10" step="1">
+
+                <label for="festas">Qual é o seu evento favorito em Montijo?</label>
+                <input list="festasMontijo" id="festas" name="festas" placeholder="Escolha um evento" autocomplete="on"
+                    required>
+                <datalist id="festasMontijo">
+                    <option value="Festas de São Pedro">
+                    <option value="Festival de Fado">
+                    <option value="Festival de Cinema">
+                    <option value="Tourada">
+                </datalist>
+
+                <label for="comentarios">Comentários sobre o quiz ou a cidade de Montijo:</label>
+                <textarea id="comentarios" name="comentarios" rows="4" cols="50"
+                    placeholder="Escreva seus comentários aqui..." maxlength="250"></textarea>
+
+                <input type="reset" form="quizMontijo" value="Limpar respostas">
+
+                <input type="submit" form="quizMontijo" value="Submeter Quiz">
+        </form>
+
+        <form action="/lab3/index.html">
+
+            <br><label for="imgMontijo">Clique na imagem para saber mais sobre Montijo.</label><br>
+            <input type="image" src="images/clickhere.png" alt="Imagem de Montijo" height="300" width="400">
+        </form>
+
+        </fieldset>
+
+    </main>
+    <footer>
+        <p>Bernardo Jerónimo, Universidade Lusófona 2024</p>
+    </footer>
+</body>
+
+</html>
