@@ -23,9 +23,9 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         grid-area: header-area;
         background-color: rgba(129, 16, 16, 0.825);
         text-align: center;
-        padding: 10px;
+        padding: 15px;
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 30px;
         color: aliceblue;
         justify-content: space-between;
         align-items: center;
@@ -37,69 +37,52 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         text-align: center;
     }
 
-    nav a {
-        float:left;
-        font-size: 16px;
-        color: rgb(124, 10, 10);
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    nav a:hover {
-        background-color: #525252;
-        border-radius: 5px;
-        color: rgb(252, 92, 92);
-        padding: 7px;
-    }
-
-    /* Estilo do menu dropdown */
+    /* Estilo do menu */
     .menu {
         position: relative;
         display: inline-block;
     }
 
     .menu .menubtn {
-        font-size: 10px;
+        font-size: 20px;
         border: none;
-        outline: none;
         color: white;
         padding: 10px;
         background-color: inherit;
         font-family: inherit;
         margin: 0;
+        text-align: center;
         cursor: pointer;
     }
 
     .menu-content {
         display: none;
         position: absolute;
-        background-color: #525252;
+        background-color:#302f2ff3;
         border-radius: 0px 0px 10px 10px;
-        min-width: 5px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
 
     .menu-content a {
-        float: none;
-        color: black;
-        padding: 12px 16px;
+        color: rgb(201, 19, 19);
+        padding: 12px;
         text-decoration: none;
         display: block;
         text-align: left;
     }
 
     .menu-content a:hover {
-        background-color: #ddd;
+        background-color: #3b3b3bc7;
+        color: rgb(247, 68, 68);
+        padding: 12px;
+        border-radius: 10px;
     }
 
-    /* Mostra os links ao passar com o rato */
     .menu:hover .menu-content {
         display: block;
     }
 
-    /* Aside */
     aside {
         grid-area: aside-area;
         background-color: rgb(255, 255, 255);
@@ -107,12 +90,13 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     }
 
     aside img { 
-        width: 50%;
+        width: 75%;
         height: auto;
-        margin: 10px 0;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     }
 
-    /* Conteúdo principal */
     main {
         grid-area: main-area;
         background-color: aliceblue;
@@ -120,6 +104,10 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         border-radius: 14px;
         padding: 20px;
         margin: 10px;
+    }
+
+    main p{
+        font-family: cursive;
     }
 
     main a {
@@ -136,7 +124,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         padding: 7px;
     }
 
-    /* Footer */
     footer {
         grid-area: footer-area;
         background-color: #302f2f;
