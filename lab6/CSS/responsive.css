@@ -185,6 +185,15 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         color: #555;
         margin-top: 8px;
     }
+
+    /* remover as fotos no mobile */
+    main p a:first-child{
+        display: none;
+    }
+
+    main p a{
+        margin: 5px;
+    }
     
     #video iframe {
         display: block;
