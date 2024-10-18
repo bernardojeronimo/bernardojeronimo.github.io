@@ -85,20 +85,69 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         display: block;
     }
     
-
     aside {
         grid-area: aside-area;
+        padding: 10px;
         background-color: inherit;
         text-align: center;
+        height: 200px;
+        zoom: 90%;
     }
-
-    aside img { 
-        width: 75%;
-        height: auto;
-        margin: 10px;
-        border-radius: 10px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    
+    .slides {
+        width: 85%; 
+        height: 100%; 
+        margin: 0 auto;
+        background-position: center; 
+        animation: slide 15s ease-in-out infinite;
+        border-radius: 10px; 
     }
+    
+    @keyframes slide {
+        0% {
+            background-image: url('/lab6/images/montijo2_grande.jpg');
+            opacity: 1;
+        }
+    
+        15% {
+            opacity: 0.5; 
+        }
+    
+        30% {
+            opacity: 1;
+        }
+    
+        33% {
+            background-image: url('/lab6/images/montijo1_grande.jpg'); 
+        }
+        
+        45% {
+            opacity: 0.5; 
+        }
+    
+        60% {
+            opacity: 1; 
+        }
+    
+        63% {
+            background-image: url('/lab6/images/montijo3_grande.jpg'); 
+        }
+    
+        75% {
+            opacity: 0.5; 
+        }
+    
+        90% {
+            opacity: 1; 
+        }
+    
+        100% {
+            background-image: url('/lab6/images/montijo2_grande.jpg'); 
+            opacity: 1; 
+        }
+    }
+    
+    
 
     main {
         grid-area: main-area;
@@ -204,10 +253,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         color: rgba(233, 18, 18, 0.703);
     }
 
-    main div p::first-letter{
-        color: rgba(233, 18, 18, 0.703);
-    }
-
     main div p{
         padding-top: 10px;
         font-size: 15px;
@@ -240,7 +285,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
 
     main table{
         margin: 15px;
-        border-radius: 5px;
     }
     
     label {
