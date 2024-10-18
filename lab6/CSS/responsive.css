@@ -1,9 +1,32 @@
-* {box-sizing: border-box; padding: 0; margin: 0;}
-header {grid-area: header-area;}
-nav {grid-area: menu; background-color: rgb(47, 47, 56);}
-aside {grid-area: aside-area; background-color: rgb(255, 255, 255);}
-main {grid-area: main-area; background-color: aliceblue;}
-footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    grid-area: header-area;
+}
+
+nav {
+    grid-area: menu;
+    background-color: rgb(47, 47, 56);
+}
+
+aside {
+    grid-area: aside-area;
+    background-color: rgb(255, 255, 255);
+}
+
+main {
+    grid-area: main-area;
+    background-color: aliceblue;
+}
+
+footer {
+    grid-area: footer-area;
+    background-color: rgb(47, 47, 56);
+}
 
 /*image opacity transition */
 @keyframes slide {
@@ -208,7 +231,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
-    main div p::first-letter{
+    main div p::first-letter {
         color: rgba(233, 18, 18, 0.703);
     }
 
@@ -292,25 +315,46 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         text-align: center;
     }
 
-
     main table {
         margin: 15px;
     }
 
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: none;
+        padding: 6px;
+    }
+
     label {
-        font-size: small;
+        font-size: 14px;
+        margin-bottom: 8px;
+        padding: 10px;
+        color: #333;
+        font-family: 'Arial', sans-serif;
     }
 
-    input {
-        font-size: medium;
+    input,
+    select,
+    textarea {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
     }
 
-    label,
-    input {
-        display: block;
-        margin-bottom: 10px;
+    fieldset form {
+        display: none;
     }
 
+    input[type="reset"],input[type="submit"]{
+        margin-top:15px;
+    }
 }
 
 /*tablet*/
