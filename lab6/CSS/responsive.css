@@ -208,6 +208,10 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
+    main div p::first-letter{
+        color: rgba(233, 18, 18, 0.703);
+    }
+
     footer {
         width: 100%;
         height: 100%;
