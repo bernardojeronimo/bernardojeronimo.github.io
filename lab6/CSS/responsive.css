@@ -213,6 +213,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     }
 
     footer {
+        grid-area: footer-area;
         width: 100%;
         height: 100%;
         grid-area: footer-area;
@@ -497,6 +498,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     }
 
     footer {
+        grid-area: footer-area;
         width: 100%;
         height: 100%;
         grid-area: footer-area;
@@ -623,7 +625,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     body {
         background-color: rgb(218, 128, 128);
         display: grid;
-        grid-template-rows: 1fr ;
         grid-template-columns: 1fr 10fr;        
         grid-template-areas:
             'header-area header-area'
@@ -653,7 +654,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         width: 100%;
         height: auto;
     }
-
     .menu {
         position: relative;
     }
@@ -664,7 +664,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
 
     .menu-content {
         background-color: #302f2ff3;
-        width: 100%;
     }
 
     .menu-content a {
@@ -686,7 +685,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         padding: 10px;
         background-color: inherit;
         text-align: center;
-        height: 230px;
+        height: 250px;
     }
 
     aside img {
@@ -708,12 +707,9 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         color: black;
         border-radius: 14px;
         padding: 15px;
-        margin: 0 50px 20px 55px; 
+        margin: 50px 50px 50px 55px; 
     }
 
-    main p {
-        font-size: 90%;
-    }
 
     main a {
         color: rgb(233, 18, 18);
@@ -913,7 +909,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     }
 
     .menubtn {
-        font-size: 23px;
+        font-size: 30px;
         border: none;
         color: white;
         padding: 6px;
@@ -975,12 +971,12 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         grid-area: main-area;
         background-color: aliceblue;
         color: black;
-        max-width: 800px; /* Ajuste conforme necessário */
-        width: 90%; /* O main ocupará 90% da largura da tela */
+        max-width: 800px;
+        width: 90%;
         border-radius: 14px;
         padding: 30px;
         padding-left: 70px;
-        margin: auto; /* Isso centraliza o main */
+        margin: auto;
     }    
 
     main p {
@@ -1006,7 +1002,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         height: auto;
     }
 
-    /* remover as fotos no mobile */
     main p {
         margin: 10px;
     }
@@ -1031,6 +1026,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     }
 
     footer {
+        grid-area: footer-area;
         width: 100%;
         height: 100%;
         grid-area: footer-area;
