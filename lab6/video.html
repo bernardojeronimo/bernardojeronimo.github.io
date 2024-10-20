@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Video</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+        }
+
+        #video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .content {
+            position: fixed;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="video">
+        <source src="video.mp4" type="video/mp4">
+        Isto mexe!
+    </video>
+
+    <div class="content">
+        <h1>Video</h1>
+        <p>ISTO MEXE!</p>
+        <a href="index.html" style="text-decoration: none; color: rgb(230, 170, 58);">Voltar</a>
+    </div>
+
+</body>
+
+</html>

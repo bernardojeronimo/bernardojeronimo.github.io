@@ -53,8 +53,9 @@ article {
 }
 
 article:last-child {
-  background: black;
   color: white;
+  align-items: center;
+  text-align: center;
 }
 
 #poema {  
@@ -147,3 +148,18 @@ article:last-child {
 body{
   background-color: rgb(204, 130, 73);
 }
+
+.parallax {
+  background-image: url("/lab6/images/Cais-das-Faluas.jpg");
+  min-height: 400px; 
+  background-attachment: fixed; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+article:last-child div{
+  margin: 20px;
+}
+
+
