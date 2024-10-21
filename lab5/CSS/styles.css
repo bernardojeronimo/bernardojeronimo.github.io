@@ -93,6 +93,7 @@ footer {
 #fotografias, #video, #poema {
     margin-top: 40px;
     align-items: center;
+    cursor: zoom-in;
 }
 
 #fotografias h3, #video h3, #poema h3 {
