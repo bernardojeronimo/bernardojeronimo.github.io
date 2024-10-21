@@ -95,10 +95,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         margin: 10px;
     }
 
-    main p {
-        font-family: cursive;
-    }
-
     main a {
         color: rgb(233, 18, 18);
         text-decoration: none;
