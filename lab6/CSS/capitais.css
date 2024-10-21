@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* medidas sao tomadas da borda */
 }
 
 header,
@@ -151,15 +150,93 @@ body{
 
 .parallax {
   background-image: url("/lab6/images/Cais-das-Faluas.jpg");
-  min-height: 400px; 
+  height: 300px;
+  width: 500px; 
   background-attachment: fixed; 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+@keyframes slide {
+  0% {
+      opacity: 1;
+  }
+
+  15% {
+      opacity: 0.5;
+  }
+
+  30% {
+      opacity: 1;
+  }
+
+  45% {
+      opacity: 0.5;
+  }
+
+  60% {
+      opacity: 1;
+  }
+
+  75% {
+      opacity: 0.5;
+  }
+
+  90% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes rotation{
+  0% {transform: rotatey(10deg);}
+  25% {transform: rotatey(60deg);}
+  50% {transform: rotateX(120deg);}
+  75% {transform: rotatez(90deg);}
+  100% {transform: rotatey(10deg);}
+}
+
+@keyframes scale{
+  0% {transform: scalez(1)}
+  50% {transform: scaley(2);}
+
+}
+
 article:last-child div{
   margin: 20px;
+}
+.format{
+  display: flex;
+  flex-direction: column;
+}
+.format img{
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.format img:first-child:hover{
+  animation: slide 15s ease-in-out infinite;
+}
+
+.format img:nth-child(3):hover{
+  animation: rotation 5s infinite ease-in-out;
+}
+
+.format img:nth-child(5):hover{
+  animation: scale 5s infinite ease-in-out;
+}
+
+.format div{
+  font-size: 20px;
+  color: #222222;
+  background-color: #e0d5d5;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 
