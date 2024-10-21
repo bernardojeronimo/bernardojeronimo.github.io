@@ -9,7 +9,7 @@ header {
 }
 
 nav {
-    grid-area: menu;
+    grid-area: menu-area;
     background-color: rgb(47, 47, 56);
 }
 

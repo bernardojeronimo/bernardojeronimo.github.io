@@ -1,7 +1,7 @@
 
 * {box-sizing: border-box; padding: 0; margin: 0;}
 header {grid-area: header-area;}
-nav {grid-area: menu; background-color: rgb(47, 47, 56);}
+nav {grid-area: menu-area; background-color: rgb(47, 47, 56);}
 aside {grid-area: aside-area; background-color: rgb(255, 255, 255);}
 main {grid-area: main-area; background-color: aliceblue;}
 footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
