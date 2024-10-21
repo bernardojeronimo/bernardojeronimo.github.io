@@ -1,9 +1,32 @@
-* {box-sizing: border-box; padding: 0; margin: 0;}
-header {grid-area: header-area;}
-nav {grid-area: menu; background-color: rgb(47, 47, 56);}
-aside {grid-area: aside-area; background-color: rgb(255, 255, 255);}
-main {grid-area: main-area; background-color: aliceblue;}
-footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    grid-area: header-area;
+}
+
+nav {
+    grid-area: menu;
+    background-color: rgb(47, 47, 56);
+}
+
+aside {
+    grid-area: aside-area;
+    background-color: rgb(255, 255, 255);
+}
+
+main {
+    grid-area: main-area;
+    background-color: aliceblue;
+}
+
+footer {
+    grid-area: footer-area;
+    background-color: rgb(47, 47, 56);
+}
 
 /*image opacity transition */
 @keyframes slide {
@@ -205,7 +228,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     main div p {
         padding-top: 10px;
         font-size: 15px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
     main div p::first-letter {
@@ -311,7 +333,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         margin-bottom: 8px;
         padding: 10px;
         color: #333;
-        font-family: 'Arial', sans-serif;
     }
 
     input,
@@ -324,15 +345,15 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         border: 1px solid #ccc;
         border-radius: 10px;
         box-sizing: border-box;
-        font-family: 'Arial', sans-serif;
     }
 
     fieldset form {
         display: none;
     }
 
-    input[type="reset"],input[type="submit"]{
-        margin-top:15px;
+    input[type="reset"],
+    input[type="submit"] {
+        margin-top: 15px;
     }
 }
 
@@ -617,8 +638,9 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         display: none;
     }
 
-    input[type="reset"],input[type="submit"]{
-        margin-top:15px;
+    input[type="reset"],
+    input[type="submit"] {
+        margin-top: 15px;
     }
 }
 
@@ -627,7 +649,8 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     body {
         background-color: rgb(218, 128, 128);
         display: grid;
-        grid-template-columns: 1fr 10fr;        
+        grid-template-rows: 60px 250px 1fr 50px;
+        grid-template-columns: 15% 1fr;
         grid-template-areas:
             'header-area header-area'
             'menu-area aside-area'
@@ -656,6 +679,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         width: 100%;
         height: auto;
     }
+
     .menu {
         position: relative;
     }
@@ -709,7 +733,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         color: black;
         border-radius: 14px;
         padding: 15px;
-        margin: 50px 50px 50px 55px; 
+        margin: 50px 50px 50px 55px;
     }
 
 
@@ -762,7 +786,9 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         text-align: center;
     }
 
-    #fotografias, #video, #poema {
+    #fotografias,
+    #video,
+    #poema {
         margin-top: 40px;
         align-items: center;
     }
@@ -848,7 +874,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         margin-bottom: 8px;
         padding: 10px;
         color: #333;
-        font-family: 'Arial', sans-serif;
     }
 
     input,
@@ -860,20 +885,20 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         border: 1px solid #ccc;
         border-radius: 10px;
         box-sizing: border-box;
-        font-family: 'Arial', sans-serif;
     }
 
     fieldset form {
         display: none;
     }
 
-    input[type="reset"], input[type="submit"] {
+    input[type="reset"],
+    input[type="submit"] {
         margin-top: 15px;
     }
 }
 
 /*portátil*/
-@media only screen and (min-width: 1024px) and (max-width: 2559px){
+@media only screen and (min-width: 1024px) and (max-width: 2559px) {
     body {
         background-color: rgb(218, 128, 128);
         color: rgb(218, 210, 210);
@@ -891,7 +916,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     }
 
 
-    header{
+    header {
         grid-area: header-area;
         background-color: rgba(160, 35, 35, 0.825);
         text-align: center;
@@ -948,7 +973,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         border-radius: 10px;
     }
 
-    .menubtn:hover + .menu-content {
+    .menubtn:hover+.menu-content {
         display: block;
     }
 
@@ -983,12 +1008,6 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         padding-left: 30px;
         margin: auto;
         margin-bottom: 40px;
-    }    
-
-    
-
-    main p {
-        font-family: cursive;
     }
 
     main a {
@@ -1027,14 +1046,13 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     main div p {
         padding-top: 10px;
         font-size: 15px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
     main div p::first-letter {
         color: rgba(233, 18, 18, 0.703);
     }
 
-    .format{
+    .format {
         width: auto;
     }
 
@@ -1049,7 +1067,9 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         text-align: center;
     }
 
-    #fotografias, #video, #poema {
+    #fotografias,
+    #video,
+    #poema {
         margin-top: 40px;
         align-items: center;
     }
@@ -1081,7 +1101,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         border-radius: 8px;
     }
 
-    figure img:hover{
+    figure img:hover {
         zoom: 150%;
     }
 
@@ -1137,7 +1157,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
     input,
     select,
     textarea {
-        width: 100%;
+        width: 60%;
         padding: 10px;
         font-size: 14px;
         border: 1px solid #ccc;
@@ -1150,10 +1170,273 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         display: none;
     }
 
-    input[type="reset"], input[type="submit"] {
+    input[type="reset"],
+    input[type="submit"] {
         margin-top: 15px;
     }
 }
 
 /*4k*/
-@media only screen and (min-width:2560px) {}
+
+@media only screen and (min-width: 2560px) and (max-width: 4096px) {
+    body {
+        background-color: rgb(218, 128, 128);
+        color: rgb(218, 210, 210);
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-rows: 100px 80px 400px 1fr 70px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'header-area'
+            'menu-area'
+            'aside-area'
+            'main-area '
+            'footer-area ';
+    }
+
+    header {
+        grid-area: header-area;
+        background-color: rgba(160, 35, 35, 0.825);
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 28px;
+        padding: 15px;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        font-family: monospace;
+    }
+
+    nav {
+        grid-area: menu-area;
+        background-color: #302f2f;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+    }
+
+    .menu {
+        position: relative;
+    }
+
+    .menubtn {
+        font-size: 36px;
+        border: none;
+        color: white;
+        padding: 8px;
+        padding-left: 12px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .menu-content {
+        display: none;
+        background-color: #302f2ff3;
+        border-radius: 0px 0px 10px 0px;
+        z-index: 1;
+    }
+
+    .menu-content a {
+        color: rgb(201, 19, 19);
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .menu-content a:hover {
+        background-color: #3b3b3bc7;
+        color: rgb(247, 68, 68);
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .menubtn:hover+.menu-content {
+        display: block;
+    }
+
+    .menu-content:hover {
+        display: block;
+    }
+
+    aside {
+        grid-area: aside-area;
+        padding: 20px;
+        background-color: inherit;
+        text-align: center;
+        height: 300px;
+    }
+
+    aside img {
+        border-radius: 5%;
+        margin-top: 30px;
+        margin-left: 20px;
+        width: auto;
+        height: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    main {
+        grid-area: main-area;
+        background-color: aliceblue;
+        color: black;
+        width: 90%;
+        border-radius: 14px;
+        padding: 40px;
+        padding-left: 40px;
+        margin: auto;
+        margin-bottom: 60px;
+    }
+
+    main p {
+        font-family: cursive;
+        font-size: 22px;
+    }
+
+    main a {
+        color: rgb(233, 18, 18);
+        text-decoration: none;
+        font-size: 22px;
+        margin: 10px;
+    }
+
+    main a:hover {
+        background-color: #e9e9e97e;
+        border-radius: 5px;
+        color: rgb(252, 92, 92);
+        padding: 10px;
+    }
+
+    main iframe {
+        width: auto;
+        height: auto;
+    }
+
+    main h2 {
+        color: rgb(201, 19, 19);
+        font-size: 32px;
+    }
+
+    main h3 {
+        color: rgba(233, 18, 18, 0.703);
+        font-size: 28px;
+    }
+
+    .format {
+        width: auto;
+    }
+
+    footer {
+        grid-area: footer-area;
+        width: 100%;
+        height: 100%;
+        background-color: #302f2f;
+        padding: 20px;
+        color: rgb(233, 18, 18);
+        text-align: center;
+    }
+
+    #fotografias,
+    #video,
+    #poema {
+        margin-top: 60px;
+        align-items: center;
+    }
+
+    #fotografias h3,
+    #video h3,
+    #poema h3 {
+        color: rgba(233, 18, 18, 0.703);
+        font-size: 30px;
+        border-bottom: 2px solid rgba(38, 36, 36, 0.508);
+        padding-bottom: 12px;
+        margin-bottom: 30px;
+    }
+
+    figure {
+        display: inline-block;
+        width: 40%;
+        margin: 20px;
+        text-align: center;
+        background-color: #e9e9e97e;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    figure img {
+        width: 180px;
+        height: 120px;
+        border-radius: 8px;
+    }
+
+    figure img:hover {
+        zoom: 150%;
+    }
+
+    figure figcaption {
+        font-size: 16px;
+        color: #555;
+        margin-top: 10px;
+    }
+
+    #video iframe {
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+        height: 500px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #poema h4 {
+        color: rgb(233, 18, 18);
+        font-size: 26px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    #poema p {
+        font-style: italic;
+        margin-bottom: 30px;
+        line-height: 2;
+        text-align: center;
+    }
+
+    main table {
+        margin: 20px;
+    }
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: none;
+        padding: 10px;
+    }
+
+    label {
+        font-size: 18px;
+        margin-bottom: 10px;
+        padding: 12px;
+        color: #333;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    input[type="reset"],
+    input[type="submit"] {
+        margin-top: 20px;
+    }
+}
