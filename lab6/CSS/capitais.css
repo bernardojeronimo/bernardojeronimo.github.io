@@ -209,11 +209,11 @@ body{
 article:last-child div{
   margin: 20px;
 }
-.format{
-  display: flex;
-  flex-direction: column;
-}
+
 .format img{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 300px;
   height: 200px;
   border-radius: 20px;

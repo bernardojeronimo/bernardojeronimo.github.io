@@ -201,7 +201,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
         background-color: rgb(218, 128, 128);
         display: grid;
         grid-template-rows: 60px 0px 1fr 50px;
-        grid-template-columns: 15% 1fr;      
+        grid-template-columns: 15% 1fr;
         grid-template-areas:
             'header-area header-area'
             'menu-area aside-area'
@@ -209,7 +209,7 @@ footer {grid-area: footer-area; background-color: rgb(47, 47, 56);}
             'footer-area footer-area';
     }
 
-    header h1 {
+    header h1{
         grid-area: header-area;
         background-color: rgba(160, 35, 35, 0.825);
         text-align: center;
