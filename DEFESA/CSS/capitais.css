@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header,
+main,
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  background-color: #222222;
+  color: aliceblue;
+  position: sticky;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 1.5em;
+  top: 0;
+  z-index: 1;
+}
+
+main {
+  height: 90vh;
+  background: purple;
+}
+
+nav a {
+  color: rgb(240, 147, 17);
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: rgba(154, 128, 91, 0.789);
+  border-radius: 5px;
+  color: rgb(237, 172, 80);
+  padding: 7px;
+}
+
+
+article {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgb(225, 168, 77);
+}
+
+article:last-child {
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+
+#poema {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.6;
+  font-weight: bolder;
+}
+
+#poema p {
+  display: block;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+
+#paisagens {
+  position: relative;
+  overflow: hidden;
+}
+
+#paisagens img {
+  height: 101vh;
+  width: 100vw;
+}
+
+#paisagens p {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#paisagens p a {
+  color: white;
+  text-decoration: none;
+}
+
+#paisagens p a:hover {
+  text-decoration: underline;
+}
+
+#cidades{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  width: 130vh;
+  margin:auto;
+  justify-content: center;
+  background-color: rgb(204, 130, 73);
+}
+
+#cidades section {
+  display: flex;
+  flex-direction:row;
+  width: 200px;
+  height: 70px;
+  background-color: #f0e6e6;
+  border-radius: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 90px;
+}
+
+#cidades section:hover {
+  background-color: #e0d5d5; 
+}
+
+#cidades img{ 
+  border-radius: 20px 0 0 20px;
+}
+
+#cidades div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: calc(100% - 100px); 
+  height: 100%;
+  color: #222222;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+body{
+  background-color: rgb(204, 130, 73);
+}
+
+.parallax {
+  background-image: url("/lab6/images/Cais-das-Faluas.jpg");
+  height: 300px;
+  width: 500px; 
+  background-attachment: fixed; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes slide {
+  0% {
+      opacity: 1;
+  }
+
+  15% {
+      opacity: 0.5;
+  }
+
+  30% {
+      opacity: 1;
+  }
+
+  45% {
+      opacity: 0.5;
+  }
+
+  60% {
+      opacity: 1;
+  }
+
+  75% {
+      opacity: 0.5;
+  }
+
+  90% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes rotation{
+  0% {transform: rotatey(10deg);}
+  25% {transform: rotatey(60deg);}
+  50% {transform: rotateX(120deg);}
+  75% {transform: rotatez(90deg);}
+  100% {transform: rotatey(10deg);}
+}
+
+@keyframes scale{
+  0% {transform: scalez(1)}
+  50% {transform: scaley(2);}
+
+}
+
+article:last-child div{
+  margin: 20px;
+}
+
+.format img{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.format img:first-child:hover{
+  animation: slide 15s ease-in-out infinite;
+}
+
+.format img:nth-child(3):hover{
+  animation: rotation 5s infinite ease-in-out;
+}
+
+.format img:nth-child(5):hover{
+  animation: scale 5s infinite ease-in-out;
+}
+
+.format div{
+  font-size: 20px;
+  color: #222222;
+  background-color: #e0d5d5;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
