@@ -1,0 +1,36 @@
+*{
+    background-color: rgb(218, 210, 209);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 20px;
+    margin: 60px;
+}
+
+li{
+    padding-top: 30px;
+}
+
+button{
+    background-color: aliceblue;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+button:hover{
+    background-color: rgb(201, 201, 203);
+    cursor:grab;
+}
+
+input{
+    border: 5px solid black;
+    padding-left: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+}
