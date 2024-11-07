@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos em Montijo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .event {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Para indicar que é clicável */
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos em Montijo</h1>
+    
+    <div class="event" id="event1">Festa de São Pedro - 30 de junho</div>
+    <div class="event" id="event2">Mercado de Artesanato - Todo primeiro sábado do mês</div>
+    <div class="event" id="event3">Festival de Música - 15 de agosto</div>
+    <div class="event" id="event4">Maratona de Montijo - 10 de setembro</div>
+    <div class="event" id="event5">Feira do Livro - Durante o mês de outubro</div>
+
+    <div id="message"></div>
+
+    <script>
+        // Evento de clique
+        document.getElementById('event1').addEventListener('click', function() {
+            document.getElementById('message').textContent = "Você clicou na Festa de São Pedro!";
+        });
+
+        // Evento de duplo clique
+        document.getElementById('event2').addEventListener('dblclick', function() {
+            this.style.color = 'blue';
+            document.getElementById('message').textContent = "Você deu um duplo clique no Mercado de Artesanato!";
+        });
+
+        // Evento de mouseover
+        document.getElementById('event3').addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#e0e0e0';
+        });
+
+        // Evento de mouseout
+        document.getElementById('event3').addEventListener('mouseout', function() {
+            this.style.backgroundColor = '';
+        });
+
+        // Evento de mousemove
+        document.addEventListener('mousemove', function(event) {
+            document.getElementById('message').textContent = `Mouse está em: ${event.clientX}, ${event.clientY}`;
+        });
+
+        // Evento de teclado: keydown
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('message').textContent = "Você pressionou a tecla Enter!";
+            }
+        });
+
+        // Evento de teclado: keyup
+        document.addEventListener('keyup', function(event) {
+            if (event.key === 'Escape') {
+                document.getElementById('message').textContent = "Você soltou a tecla Escape!";
+            }
+        });
+
+        // Evento de formulário: change (simulando um select)
+        const selectElement = document.createElement('select');
+        selectElement.innerHTML = `
+            <option value="">Escolha um evento</option>
+            <option value="event1">Festa de São Pedro</option>
+            <option value="event2">Mercado de Artesanato</option>
+        `;
+        selectElement.addEventListener('change', function() {
+            document.getElementById('message').textContent = `Você escolheu: ${this.value}`;
+        });
+        document.body.appendChild(selectElement);
+
+        // Evento de formulário: submit (simulando um formulário)
+        const form = document.createElement('form');
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'Digite seu nome';
+        const submitButton = document.createElement('button');
+        submitButton.textContent = 'Enviar';
+
+        form.appendChild(input);
+        form.appendChild(submitButton);
+        document.body.appendChild(form);
+
+        form.addEventListener('submit', function(event) {
+
+            document.getElementById('message').textContent = `Olá, ${input.value}! Seu formulário foi enviado!`;
+        });
+    </script>
+</body>
+</html>
