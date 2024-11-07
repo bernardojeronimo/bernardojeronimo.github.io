@@ -1,5 +1,4 @@
 const corTexto = document.getElementById('corTexto');
-const btnSubmit = document.getElementById('btnSubmit');
 const corInput = document.getElementById('corInput');
 const btnContador = document.getElementById('btnContador');
 const contador = document.getElementById('contador');
@@ -23,11 +22,19 @@ document.querySelectorAll("button[data-color]").forEach((button) => {
     });
 });
 
-let count = 0;
+
+let count;
+if(!localStorage.getItem('count')) {
+    localStorage.setItem('count', 0);
+}
 btnContador.addEventListener('click', () => {
-    count += 1;
-    contador.textContent = count;
+    let count = localStorage.getItem('count');
+    count++;
+    document.getElementById('contador').textContent = count;
+    localStorage.setItem('count', count);
 });
+
+document.getElementById('contador').textContent = localStorage.getItem('count');
 
 document.querySelector('select').onchange = function() {
     document.body.style.backgroundColor = this.value;
@@ -44,3 +51,20 @@ passaPorAqui.addEventListener('mouseout', () => {
 randomColorInput.addEventListener('input', () => {
     randomColorInput.style.backgroundColor = gerarCorAleatoria();
 });
+
+document.querySelector('form').onsubmit = (e) => {
+    e.preventDefault();
+
+    const nome = document.querySelector('#nome').value;
+    const idade = document.querySelector('#idade').value;
+
+    const message = `Olá, o ${nome} tem ${idade} anos!`;
+    document.querySelector('#message').textContent = message;
+}
+
+let counter = 0;
+function count1() {
+    counter++;
+    document.querySelector('p').textContent = counter;
+}
+setInterval(count1, 1000);

@@ -23,12 +23,23 @@
         <li>Experimenta escrever... <input type="text" id="randomColorInput"></li>
         <li>Escolha uma cor em inglês:
             <select name="background" id="colorSelect">
+                <option value="rgb(218, 210, 209)">Gray</option>
                 <option value="red">Red</option>
                 <option value="green">Green</option>
                 <option value="blue">Blue</option>
-                <option value="rgb(218, 210, 209)">Gray</option>
             </select>
         <li><button id="btnContador">Click Me!</button> <span id="contador">0</span></li>
+        <li>
+            <form action="pessoa">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+                <label for="idade">Idade:</label>
+                <input type="text" id="idade" name="idade" min="0">
+                <input type="submit" id="sub" value="Submit">
+            </form>
+        </li>
+        <div id="message"></div>
+        <li>Automatic Counter: <p>0</p></li>
     </ol>
     <script src="main.js"></script>
 </body>

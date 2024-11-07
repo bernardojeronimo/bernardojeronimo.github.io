@@ -24,6 +24,14 @@ body{
     margin: 60px;
 }
 
+select{
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+}
 
 li{
     padding-top: 30px;
@@ -44,8 +52,40 @@ button:hover{
 }
 
 input{
-    border: 5px solid black;
-    padding-left: 10px;
-    margin-left: 10px;
+    border: 2px solid black;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left:10px;
     font-size: 20px;
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+label{
+    padding-left: 10px;
+}
+
+input[type="submit"]{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+input[type="submit"]:hover{
+    background-color: rgb(201, 201, 203);
+    cursor: pointer;
+}
+
+form{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#message{
+    font-size: 20px;
+    margin-top: 10px;
+    padding-left: 13px;
 }
