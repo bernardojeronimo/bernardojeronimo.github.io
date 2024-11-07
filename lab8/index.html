@@ -9,9 +9,20 @@
 <body>
     <ol>
         <li id="passaPorAqui">Passa por aqui</li>
-        <li><span id="corTexto">Pinta-me!</span><button id="btnRed">Red</button><button id="btnGreen">Green</button><button id="btnBlue">Blue</button></li>
+        <li>
+            <span id="corTexto">Pinta-me!</span>
+            <button data-color="red">Red</button>
+            <button data-color="green">Green</button>
+            <button data-color="blue">Blue</button>
+        </li>
         <li>Experimenta escrever... <input type="text" id="randomColorInput"></li>
-        <li>Escolha uma cor em inglês: <input type="text" id="corInput"> <button id="btnSubmit">Submeter</button></li>
+        <li>Escolha uma cor em inglês:
+            <select name="background" id="colorSelect">
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="rgb(218, 210, 209)">Gray</option>
+            </select>
         <li><button id="btnContador">Click Me!</button> <span id="contador">0</span></li>
     </ol>
     <script src="main.js"></script>

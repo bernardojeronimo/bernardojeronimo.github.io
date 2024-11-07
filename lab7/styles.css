@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+nav a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
 body{
     background-color: rgb(218, 210, 209);
     font-size: 20px;
