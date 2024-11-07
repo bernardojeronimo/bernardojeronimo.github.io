@@ -7,20 +7,11 @@ const corInput = document.getElementById('corInput');
 const btnContador = document.getElementById('btnContador');
 const contador = document.getElementById('contador');
 const passaPorAqui = document.getElementById('passaPorAqui');
-const randomColorInput = document.getElementById('randomColorInput');
 
 function mudarCor(color) {
     corTexto.style.color = color;
 }
 
-function gerarCorAleatoria() {
-    const letras = '0123456789ABCDEF';
-    let cor = '#';
-    for (let i = 0; i < 6; i++) {
-        cor += letras[Math.floor(Math.random() * 16)];
-    }
-    return cor;
-}
 btnRed.addEventListener('click', () => mudarCor('red'));
 btnGreen.addEventListener('click', () => mudarCor('green'));
 btnBlue.addEventListener('click', () => mudarCor('blue'));
@@ -42,8 +33,4 @@ passaPorAqui.addEventListener('mouseover', () => {
 
 passaPorAqui.addEventListener('mouseout', () => {
     passaPorAqui.textContent = "Passa por aqui";
-});
-
-randomColorInput.addEventListener('input', () => {
-    randomColorInput.style.backgroundColor = gerarCorAleatoria();
 });

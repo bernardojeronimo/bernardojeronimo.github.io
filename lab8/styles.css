@@ -4,11 +4,26 @@
     box-sizing: border-box;
 }
 
+
+nav a {
+    color: rgb(240, 147, 17);
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    background-color: rgba(154, 128, 91, 0.789);
+    border-radius: 5px;
+    color: rgb(237, 172, 80);
+    padding: 7px;
+  }
+
 body{
     background-color: rgb(218, 210, 209);
     font-size: 20px;
     margin: 60px;
 }
+
 
 li{
     padding-top: 30px;
