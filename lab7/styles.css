@@ -4,15 +4,33 @@
     box-sizing: border-box;
 }
 
-nav a{
+
+nav a {
+    color: rgb(240, 147, 17);
+    margin-left: 15px;
     text-decoration: none;
-    color: aliceblue;
-}
+  }
+  
+  nav a:hover {
+    background-color: rgba(154, 128, 91, 0.789);
+    border-radius: 5px;
+    color: rgb(237, 172, 80);
+    padding: 7px;
+  }
 
 body{
     background-color: rgb(218, 210, 209);
     font-size: 20px;
     margin: 60px;
+}
+
+select{
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
 }
 
 li{
@@ -30,12 +48,18 @@ button{
 
 button:hover{
     background-color: rgb(201, 201, 203);
-    cursor:grab;
+    cursor:pointer;
 }
 
 input{
-    border: 5px solid black;
-    padding-left: 10px;
-    margin-left: 10px;
+    border: 2px solid black;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left:10px;
     font-size: 20px;
+    width: 30%;
+    margin-bottom: 10px;
 }
+
+
