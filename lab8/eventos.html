@@ -12,7 +12,6 @@
             margin: 0;
             padding: 20px;
         }
-
         nav a {
     color: rgb(240, 147, 17);
     margin-left: 15px;
@@ -54,76 +53,6 @@
     <div class="event" id="event5">Feira do Livro - Durante o mês de outubro</div>
 
     <div id="message"></div>
-
-    <script>
-        // Evento de clique
-        document.getElementById('event1').addEventListener('click', function() {
-            document.getElementById('message').textContent = "Você clicou na Festa de São Pedro!";
-        });
-
-        // Evento de duplo clique
-        document.getElementById('event2').addEventListener('dblclick', function() {
-            this.style.color = 'blue';
-            document.getElementById('message').textContent = "Você deu um duplo clique no Mercado de Artesanato!";
-        });
-
-        // Evento de mouseover
-        document.getElementById('event3').addEventListener('mouseover', function() {
-            this.style.backgroundColor = '#e0e0e0';
-        });
-
-        // Evento de mouseout
-        document.getElementById('event3').addEventListener('mouseout', function() {
-            this.style.backgroundColor = '';
-        });
-
-        // Evento de mousemove
-        document.addEventListener('mousemove', function(event) {
-            document.getElementById('message').textContent = `Mouse está em: ${event.clientX}, ${event.clientY}`;
-        });
-
-        // Evento de teclado: keydown
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                document.getElementById('message').textContent = "Você pressionou a tecla Enter!";
-            }
-        });
-
-        // Evento de teclado: keyup
-        document.addEventListener('keyup', function(event) {
-            if (event.key === 'Escape') {
-                document.getElementById('message').textContent = "Você soltou a tecla Escape!";
-            }
-        });
-
-        // Evento de formulário: change (simulando um select)
-        const selectElement = document.createElement('select');
-        selectElement.innerHTML = `
-            <option value="">Escolha um evento</option>
-            <option value="event1">Festa de São Pedro</option>
-            <option value="event2">Mercado de Artesanato</option>
-        `;
-        selectElement.addEventListener('change', function() {
-            document.getElementById('message').textContent = `Você escolheu: ${this.value}`;
-        });
-        document.body.appendChild(selectElement);
-
-        // Evento de formulário: submit (simulando um formulário)
-        const form = document.createElement('form');
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.placeholder = 'Digite seu nome';
-        const submitButton = document.createElement('button');
-        submitButton.textContent = 'Enviar';
-
-        form.appendChild(input);
-        form.appendChild(submitButton);
-        document.body.appendChild(form);
-
-        form.addEventListener('submit', function(event) {
-
-            document.getElementById('message').textContent = `Olá, ${input.value}! Seu formulário foi enviado!`;
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
