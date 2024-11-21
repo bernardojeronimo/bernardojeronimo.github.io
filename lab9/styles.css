@@ -319,6 +319,7 @@ footer p {
 @media (max-width: 768px) {
   body {
       padding: 0;
+      padding-top: 80px;
   }
 
   main {
@@ -357,6 +358,14 @@ footer p {
   .produto,
   .carrinho {
       flex-direction: column;
+  }
+
+  .pCont,
+  #carrinho .pCont {
+      grid-template-columns: 1fr;
+      width: 100%;
+      padding: 10px;
+      gap: 10px;
   }
 
   .produto figure,
