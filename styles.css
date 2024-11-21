@@ -8,23 +8,23 @@ body {
 header h1 {
     background-color: rgba(129, 16, 16, 0.825);
     color: antiquewhite;
-    font-size: 400px ;
+    font-size: 4rem;
     text-align: center;
     margin: 0;
     padding: 0;
     text-shadow: 10px 2px 5px rgba(199, 174, 174, 0.548);
 }
 
-header img{
+header img {
     border-radius: 2%;
     margin-top: 20px;
     margin-left: 10px;
-    width:460px; 
-    height:310px;
+    width: 460px;
+    height: 310px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-main{
+main {
     background-color: rgb(247, 247, 247);
     color: black;
     margin-bottom: 20px;
@@ -51,8 +51,7 @@ main a:hover {
     padding: 7px;
 }
 
-
-main img{
+main img {
     width: 100px;
     height: 100px;
     margin: auto;
@@ -62,7 +61,7 @@ main img{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-main p{
+main p {
     padding-left: 15px;
 }
 
@@ -82,7 +81,7 @@ nav a {
     text-decoration: none;
 }
 
-nav li{
+nav li {
     margin-bottom: 15px;
     color: aliceblue;
 }
@@ -93,4 +92,103 @@ footer {
     color: rgb(233, 18, 18);
     text-align: center;
     margin: 0;
+}
+
+/* Responsive Design */
+
+/* Mobile (Phones) */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 3rem;
+        padding-top: 10px;
+    }
+
+    header img {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    main {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    main img {
+        width: 80px;
+        height: 80px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav li {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet (Portrait) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    main {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    main img {
+        width: 90px;
+        height: 90px;
+    }
+
+    nav {
+        padding: 15px;
+    }
+
+    nav li {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    header h1 {
+        font-size: 4rem;
+    }
+
+    header img {
+        width: 460px;
+        height: 310px;
+    }
+
+    main {
+        margin-left: 30px;
+        margin-right: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    nav {
+        padding: 20px;
+    }
+
+    nav li {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
 }
