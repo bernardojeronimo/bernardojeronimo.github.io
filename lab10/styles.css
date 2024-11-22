@@ -26,6 +26,7 @@ header {
 }
 
 
+
 header a {
   color: #ded5d5;
   margin-right: auto;
@@ -63,7 +64,8 @@ h2{
 }
 
 main {
-  padding: 10px;
+  padding: 0px;
+  margin: 0;
 }
 
 .pCont {
@@ -386,3 +388,34 @@ footer p {
       margin-bottom: 10px;
   }
 }
+
+.filtros{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+.filtros h3{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.filtros select{
+  padding: 5px;
+  border-radius: 5px;
+}
+.filtros textarea {
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  height: 28px;
+  width: 150px;
+  margin: 0 10px;
+  transition: border-color 0.3s;
+}
+
+

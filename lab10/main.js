@@ -1,12 +1,87 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetch('https://deisishop.pythonanywhere.com/products/')
-     .then(response => response.json())
-     .then(produtos => {
-         carregarProdutos(produtos);
-     })
-     .catch(error => console.error('Erro:', error));
+        .then(response => response.json())
+        .then(produtos => {
+            const categorias = [];
+            for (let i = 0; i < produtos.length; i++) {
+                if (!categorias.includes(produtos[i].category)) {
+                    categorias.push(produtos[i].category);
+                }
+            }
+
+            carregarProdutos(produtos);
+            carregarFiltros(categorias, produtos);
+        })
+        .catch(error => console.error('Erro:', error));
     carregarCarrinho();
 });
+
+function carregarFiltros(categorias, produtos) {
+    const filtrosContainer = document.createElement('section');
+    filtrosContainer.id = 'filtros-categorias';
+    filtrosContainer.classList.add('filtros');
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = 'Filtrar';
+    filtrosContainer.append(titulo);
+
+    const selected = document.createElement('select');
+    selected.id = 'categoria-select';
+    filtrosContainer.append(selected);
+
+    const todosFiltro = document.createElement('option');
+    todosFiltro.textContent = 'Todas as Categorias';
+    todosFiltro.value = 'Todas as Categorias';
+    selected.append(todosFiltro);
+
+    for (let i = 0; i < categorias.length; i++) {
+        const option = document.createElement('option');
+        option.textContent = categorias[i];
+        option.value = categorias[i];
+        selected.append(option);
+    }
+
+    selected.addEventListener('click', () => {
+        const categoriaSelecionada = selected.value;
+        const sectionProdutos = document.getElementById('produtos');
+        sectionProdutos.innerHTML = '';
+
+        const produtosFiltrados = categoriaSelecionada == 'Todas as Categorias'
+            ? produtos
+            : produtos.filter(produto => produto.category == categoriaSelecionada);
+
+        carregarProdutos(produtosFiltrados);
+    });
+
+
+    const ordenar = document.createElement('h3');
+    ordenar.textContent = 'Ordenar';
+    filtrosContainer.append(ordenar);
+
+    const selected2 = document.createElement('select');
+    selected2.id = 'categoria-select';
+    filtrosContainer.append(selected2);
+
+    for (let i = 0; i < categorias.length; i++) {
+        const option = document.createElement('option');
+        option.textContent = categorias[i];
+        option.value = categorias[i];
+        selected2.append(option);
+    }
+
+
+    const procurar = document.createElement('h3');
+    procurar.textContent = 'Procurar';
+    filtrosContainer.append(procurar);
+
+    const selected3 = document.createElement('textarea');
+    selected3.id = 'categoria-select';
+    filtrosContainer.append(selected3);
+
+    const sectionProdutos = document.getElementById('produtos');
+    sectionProdutos.parentNode.insertBefore(filtrosContainer, sectionProdutos);
+
+}
 
 function carregarProdutos(produtos) {
     const sectionpro = document.getElementById('produtos');
@@ -155,8 +230,8 @@ function criarProdutoCarrinho(produto) {
     btn.addEventListener('click', () => {
         let carrinho = JSON.parse(localStorage.getItem('carrinho'));
 
-        const index = carrinho.findIndex(p => p.title === produto.title);
-        if (index !== -1) {
+        const index = carrinho.findIndex(p => p.title == produto.title);
+        if (index != -1) {
             carrinho.splice(index, 1);
             localStorage.setItem('carrinho', JSON.stringify(carrinho));
         }
