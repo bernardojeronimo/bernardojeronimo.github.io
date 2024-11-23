@@ -12,6 +12,7 @@ function carregarProdutos(produtos) {
     });
 }
 
+
 function criarProduto(produto) {
     const article = document.createElement('article');
     article.classList.add('produto');
@@ -43,7 +44,7 @@ function criarProduto(produto) {
 
     const preco = document.createElement('strong');
     preco.classList.add('preco');
-    preco.textContent = `${produto.price}€`;
+    preco.textContent = `${produto.price.toFixed(2)}€`;
 
     const rating = document.createElement('span');
     rating.classList.add('rating');
@@ -56,7 +57,7 @@ function criarProduto(produto) {
 
         setTimeout(() => {
             btn.textContent = '+ Adicionar ao cesto';
-        }, 2000);
+        }, 500);
 
         adicionarCarrinho(produto);
     });
@@ -143,15 +144,15 @@ function criarProdutoCarrinho(produto) {
 
     const preco = document.createElement('strong');
     preco.classList.add('preco');
-    preco.textContent = `${produto.price}€`;
+    preco.textContent = `${produto.price.toFixed(2)}€`;
 
     const btn = document.createElement('button');
     btn.textContent = '- Remover do cesto';
     btn.addEventListener('click', () => {
         let carrinho = JSON.parse(localStorage.getItem('carrinho'));
 
-        const index = carrinho.findIndex(p => p.title === produto.title);
-        if (index !== -1) {
+        const index = carrinho.findIndex(p => p.title == produto.title);
+        if (index != -1) {
             carrinho.splice(index, 1);
             localStorage.setItem('carrinho', JSON.stringify(carrinho));
         }

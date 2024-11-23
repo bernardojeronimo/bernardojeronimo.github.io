@@ -63,11 +63,6 @@ h2{
   
 }
 
-main {
-  padding: 0px;
-  margin: 0;
-}
-
 .pCont {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -76,6 +71,7 @@ main {
   width: 80%;
   margin: auto;
 }
+
 
 .produto {
   border: 1px solid #ddd;
@@ -174,14 +170,14 @@ main {
 }
 
 .carrinho {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: 1px solid #ddd;
   border-radius: 20px;
   background: white;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 
 .carrinho:hover {
@@ -248,7 +244,6 @@ footer {
   color: white;
   padding: 20px;
   text-align: center;
-  margin-top: auto;
 }
 
 footer p {
@@ -259,8 +254,6 @@ footer p {
 #carrinho {
   background-color: #e6f2ff; 
   padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -269,35 +262,32 @@ footer p {
   margin-bottom: 20px;
 }
 
-#carrinho .carrinho {
+.carrinho {
   display: flex;
-  align-items: center;
-  margin-bottom: 12px;
   background-color: white;
   border-radius: 10px;
-  padding: 10px;
+  padding: 14px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-#carrinho .carrinho .produto-detalhes {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 0;
-}
 
-#carrinho .carrinho button {
+.carrinho button {
   background-color: #c97d7d;
   color: white;
   border: none;
-  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 10px;
+  margin: auto;
   transition: background-color 0.3s;
 }
 
-#carrinho .carrinho button:hover {
-  background-color: #ff1a1a;
+.carrinho button:hover {
+  background-color: #ea4f4f;
+}
+
+.carrinho .preco{
+  margin: auto;
 }
 
 .total {
@@ -309,6 +299,32 @@ footer p {
   font-size: 24px;
   font-weight: bold;
   color: #1674b1;
+}
+
+.filtros{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+.filtros h3{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.filtros select{
+  padding: 5px;
+  border-radius: 5px;
+}
+.filtros input {
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s;
 }
 
 
@@ -325,10 +341,6 @@ footer p {
   body {
       padding: 0;
       padding-top: 80px;
-  }
-
-  main {
-      padding: 10px;
   }
 
   .pCont,
@@ -356,6 +368,23 @@ footer p {
 
   h2 {
       font-size: 24px;
+  }
+
+  .filtros {
+    flex-direction: column;
+    margin: 15px;
+  }
+
+  .filtros h3 {
+    padding: 5px 0;
+  }
+  .filtros select{
+    text-align: center;
+  }
+
+  .filtros select,
+  .filtros input {
+    width: 90%;
   }
 }
 
@@ -387,35 +416,21 @@ footer p {
   .preco {
       margin-bottom: 10px;
   }
-}
 
-.filtros{
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  align-items: center;
-}
+  .filtros {
+    flex-direction: column;
+  }
 
-.filtros h3{
-  padding-right: 10px;
-  padding-left: 10px;
-}
+  .filtros h3 {
+    padding: 5px 0;
+  }
 
-.filtros select{
-  padding: 5px;
-  border-radius: 5px;
+  .filtros select{
+    text-align: center;
+  }
+  .filtros select,
+  .filtros input {
+    width: 90%;
+  }
 }
-.filtros textarea {
-  padding: 4px 8px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  height: 28px;
-  width: 150px;
-  margin: 0 10px;
-  transition: border-color 0.3s;
-}
-
 

@@ -62,19 +62,42 @@ function carregarFiltros(categorias, produtos) {
     selected2.id = 'categoria-select';
     filtrosContainer.append(selected2);
 
-    for (let i = 0; i < categorias.length; i++) {
-        const option = document.createElement('option');
-        option.textContent = categorias[i];
-        option.value = categorias[i];
-        selected2.append(option);
-    }
+    const ordem = document.createElement('option');
+    ordem.textContent = 'Ordenar pelo preço';
+    ordem.value = 'padrao';
+    selected2.append(ordem);
 
+    const option = document.createElement('option');
+    option.textContent = 'Preço Decrescente';
+    option.value = 'Preço Decrescente';
+    selected2.append(option);
+
+    const option2 = document.createElement('option');
+    option2.textContent = 'Preço Crescente';
+    option2.value = 'Preço Crescente'; 
+    selected2.append(option2);
+
+    selected2.addEventListener('click', () => {
+        const ordemSelecionada = selected2.value;
+        const sectionProdutos = document.getElementById('produtos');
+        sectionProdutos.innerHTML = '';
+
+        let produtosOrdenados = produtos;
+
+        if (ordemSelecionada === 'Preço Decrescente') {
+            produtosOrdenados.sort((a, b) => b.price - a.price);
+        } else if (ordemSelecionada === 'Preço Crescente') {
+            produtosOrdenados.sort((a, b) => a.price - b.price);
+        }
+
+        carregarProdutos(produtosOrdenados);
+    });
 
     const procurar = document.createElement('h3');
     procurar.textContent = 'Procurar';
     filtrosContainer.append(procurar);
 
-    const selected3 = document.createElement('textarea');
+    const selected3 = document.createElement('input');
     selected3.id = 'categoria-select';
     filtrosContainer.append(selected3);
 
@@ -123,7 +146,7 @@ function criarProduto(produto) {
 
     const preco = document.createElement('strong');
     preco.classList.add('preco');
-    preco.textContent = `${produto.price}€`;
+    preco.textContent = `${produto.price.toFixed(2)}€`;
 
     const rating = document.createElement('span');
     rating.classList.add('rating');
@@ -136,7 +159,7 @@ function criarProduto(produto) {
 
         setTimeout(() => {
             btn.textContent = '+ Adicionar ao cesto';
-        }, 2000);
+        }, 500);
 
         adicionarCarrinho(produto);
     });
@@ -223,7 +246,7 @@ function criarProdutoCarrinho(produto) {
 
     const preco = document.createElement('strong');
     preco.classList.add('preco');
-    preco.textContent = `${produto.price}€`;
+    preco.textContent = `${produto.price.toFixed(2)}€`;
 
     const btn = document.createElement('button');
     btn.textContent = '- Remover do cesto';
