@@ -84,9 +84,9 @@ function carregarFiltros(categorias, produtos) {
 
         let produtosOrdenados = produtos;
 
-        if (ordemSelecionada === 'Preço Decrescente') {
+        if (ordemSelecionada == 'Preço Decrescente') {
             produtosOrdenados.sort((a, b) => b.price - a.price);
-        } else if (ordemSelecionada === 'Preço Crescente') {
+        } else if (ordemSelecionada == 'Preço Crescente') {
             produtosOrdenados.sort((a, b) => a.price - b.price);
         }
 
@@ -98,12 +98,20 @@ function carregarFiltros(categorias, produtos) {
     filtrosContainer.append(procurar);
 
     const selected3 = document.createElement('input');
+    selected3.type = 'text';
+    selected3.placeholder = 'Pesquisar produto...';
     selected3.id = 'categoria-select';
     filtrosContainer.append(selected3);
 
+    selected3.addEventListener('keyup', () => {
+        const termo = selected3.value;
+        const sectionProdutos = document.getElementById('produtos');
+        sectionProdutos.innerHTML = '';
+        const produtosFiltrados = produtos.filter(produto => produto.title.includes(termo));
+        carregarProdutos(produtosFiltrados);
+    });
     const sectionProdutos = document.getElementById('produtos');
-    sectionProdutos.parentNode.insertBefore(filtrosContainer, sectionProdutos);
-
+    sectionProdutos.before(filtrosContainer, sectionProdutos);
 }
 
 function carregarProdutos(produtos) {
@@ -209,10 +217,49 @@ function carregarCarrinho() {
 
         sectionCarrinho.append(carrinhoContainer);
 
+        const comprar = document.createElement('section');
+        comprar.classList.add('comprar');
+
         const totalElement = document.createElement('p');
         totalElement.classList.add('total');
         totalElement.textContent = `Custo total: ${total.toFixed(2)}€`;
-        sectionCarrinho.append(totalElement);
+        
+        const estudanteVerificar = document.createElement('h4');
+        estudanteVerificar.classList.add('estudante');
+        estudanteVerificar.textContent = 'És estudante do DEISI?'; 
+
+        const verificar = document.createElement('input');~
+        verificar.classList.add('estudante');
+        verificar.type = 'checkbox';
+
+        const cupao = document.createElement('h4');
+        cupao.classList.add('cupao');
+        cupao.textContent = 'Cupão de desconto:';
+
+        const desconto = document.createElement('input');
+        desconto.classList.add('cupao');
+        desconto.type = 'text';
+
+        const btn = document.createElement('button');
+        btn.classList.add('comprar');
+        btn.textContent = 'Comprar';
+        verificar.addEventListener('checked', () => {
+
+        });
+
+        desconto.addEventListener('keyup', () => {});
+
+        btn.addEventListener('click', () => {
+        });
+
+
+        comprar.append(totalElement);
+        comprar.append(estudanteVerificar);
+        comprar.append(verificar);
+        comprar.append(cupao);
+        comprar.append(desconto);
+        comprar.append(btn);
+        sectionCarrinho.append(comprar);
     } else {
         const emptyMessage = document.createElement('p');
         emptyMessage.textContent = 'O carrinho está vazio';
