@@ -243,15 +243,6 @@ function carregarCarrinho() {
         const btn = document.createElement('button');
         btn.classList.add('comprar');
         btn.textContent = 'Comprar';
-        verificar.addEventListener('checked', () => {
-
-        });
-
-        desconto.addEventListener('keyup', () => {});
-
-        btn.addEventListener('click', () => {
-        });
-
 
         comprar.append(totalElement);
         comprar.append(estudanteVerificar);
@@ -259,6 +250,35 @@ function carregarCarrinho() {
         comprar.append(cupao);
         comprar.append(desconto);
         comprar.append(btn);
+
+        btn.addEventListener('click', () => {
+            const produtosIds = carrinho.map(produto => produto.id);
+            const dadosDesconto = {
+                products: produtosIds,
+                is_student: verificar.checked,
+                discount_code: desconto.value
+            };
+            
+            const response = fetch('https://deisishop.pythonanywhere.com/buy/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dadosDesconto)
+            }).catch(error => console.error('Erro:', error));
+            const resposta = response.json();
+    
+            const valorfinal = document.createElement('p');
+            valorfinal.classList.add('valor-final');
+            valorfinal.textContent = `Valor final a pagar (com eventuais descontos): ${resposta.totalCost.toFixed(2)} €`;
+            
+            const referencia = document.createElement('p');
+            referencia.classList.add('referencia');
+            referencia.textContent = `Referência de pagamento: ${resposta.reference}`;
+    
+            comprar.append(valorfinal);
+            comprar.append(referencia);
+    });
         sectionCarrinho.append(comprar);
     } else {
         const emptyMessage = document.createElement('p');
