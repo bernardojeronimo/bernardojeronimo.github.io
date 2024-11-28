@@ -176,7 +176,7 @@ function criarProduto(produto) {
     info.append(categoria);
     info.append(descricao);
     detalhes.append(preco);
-    detalhes.append(rating);
+    detalhes.append(rating); 
 
     article.append(figure);
     article.append(info);
@@ -255,29 +255,31 @@ function carregarCarrinho() {
             const produtosIds = carrinho.map(produto => produto.id);
             const dadosDesconto = {
                 products: produtosIds,
-                is_student: verificar.checked,
-                discount_code: desconto.value
+                student: verificar.checked,
+                coupon: desconto.value
             };
             
-            const response = fetch('https://deisishop.pythonanywhere.com/buy/', {
+            fetch('https://deisishop.pythonanywhere.com/buy/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(dadosDesconto)
-            }).catch(error => console.error('Erro:', error));
-            const resposta = response.json();
+            })
+            .then(response => response.json())
+            .then (dados =>{
     
             const valorfinal = document.createElement('p');
             valorfinal.classList.add('valor-final');
-            valorfinal.textContent = `Valor final a pagar (com eventuais descontos): ${resposta.totalCost.toFixed(2)} €`;
+            valorfinal.textContent = `Valor final a pagar (com eventuais descontos): ${dados.totalCost.toFixed(2)} €`;
             
             const referencia = document.createElement('p');
             referencia.classList.add('referencia');
-            referencia.textContent = `Referência de pagamento: ${resposta.reference}`;
+            referencia.textContent = `Referência de pagamento: ${dados.reference}`;
     
             comprar.append(valorfinal);
             comprar.append(referencia);
+            })  .catch(error => console.error('Erro:', error));
     });
         sectionCarrinho.append(comprar);
     } else {
