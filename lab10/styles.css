@@ -353,46 +353,6 @@ footer p {
   color: #1674b1;
 }
 
-/* comprar responsivo */
-
-@media (max-width: 768px) {
-  .comprar {
-    justify-content: center;
-    padding: 20px;
-    width: 90%;
-    max-width: 100%;
-  }
-
-  .comprar input[type="text"] {
-    width: 60%;
-  }
-
-  .comprar button {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .comprar {
-    flex-direction: column;
-    padding: 15px;
-    width: 95%;
-  }
-
-  .comprar input[type="text"] {
-    width: 80%;
-    font-size: 14px;
-  }
-
-  .comprar button {
-    font-size: 14px;
-    padding: 8px 16px; 
-  }
-  .recibo{
-    font-size: 15px;
-  }
-}
 
 .filtros{
   display: flex;
@@ -418,6 +378,47 @@ footer p {
   border-radius: 5px;
   border: 1px solid #ddd;
   transition: border-color 0.3s;
+}
+
+/* comprar responsivo */
+
+@media (max-width: 768px) {
+  .comprar {
+    justify-content: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .comprar input[type="text"] {
+    width: 60%;
+  }
+
+  .comprar button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comprar {
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .comprar input[type="text"] {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .comprar button {
+    font-size: 14px;
+    padding: 8px 16px; 
+  }
+  .recibo{
+    font-size: 12px;
+  }
 }
 
 

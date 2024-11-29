@@ -2,116 +2,123 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('https://deisishop.pythonanywhere.com/products/')
         .then(response => response.json())
         .then(produtos => {
-            const categorias = [];
-            for (let i = 0; i < produtos.length; i++) {
-                if (!categorias.includes(produtos[i].category)) {
-                    categorias.push(produtos[i].category);
-                }
-            }
-
             carregarProdutos(produtos);
-            carregarFiltros(categorias, produtos);
+            carregarFiltros(produtos);
         })
         .catch(error => console.error('Erro:', error));
+
     carregarCarrinho();
 });
 
-function carregarFiltros(categorias, produtos) {
-    const filtrosContainer = document.createElement('section');
-    filtrosContainer.id = 'filtros-categorias';
-    filtrosContainer.classList.add('filtros');
+function carregarFiltros(produtos) {
+    fetch('https://deisishop.pythonanywhere.com/categories/')
+        .then(response => response.json())
+        .then(categorias => {
+            const filtrosContainer = document.createElement('section');
+            filtrosContainer.id = 'filtros-categorias';
+            filtrosContainer.classList.add('filtros');
 
-    const titulo = document.createElement('h3');
-    titulo.textContent = 'Filtrar';
-    filtrosContainer.append(titulo);
+            // Título do filtro
+            const titulo = document.createElement('h3');
+            titulo.textContent = 'Filtrar';
+            filtrosContainer.append(titulo);
 
-    const selected = document.createElement('select');
-    selected.id = 'categoria-select';
-    filtrosContainer.append(selected);
+            // Dropdown de categorias
+            const categoriaSelect = document.createElement('select');
+            categoriaSelect.id = 'categoria-select';
+            filtrosContainer.append(categoriaSelect);
 
-    const todosFiltro = document.createElement('option');
-    todosFiltro.textContent = 'Todas as Categorias';
-    todosFiltro.value = 'Todas as Categorias';
-    selected.append(todosFiltro);
+            const todasCategoriasOption = document.createElement('option');
+            todasCategoriasOption.textContent = 'Todas as Categorias';
+            todasCategoriasOption.value = 'Todas as Categorias';
+            categoriaSelect.append(todasCategoriasOption);
 
-    for (let i = 0; i < categorias.length; i++) {
-        const option = document.createElement('option');
-        option.textContent = categorias[i];
-        option.value = categorias[i];
-        selected.append(option);
-    }
+            categorias.forEach(categoria => {
+                const option = document.createElement('option');
+                option.textContent = categoria;
+                option.value = categoria;
+                categoriaSelect.append(option);
+            });
 
-    selected.addEventListener('click', () => {
-        const categoriaSelecionada = selected.value;
-        const sectionProdutos = document.getElementById('produtos');
-        sectionProdutos.innerHTML = '';
+            categoriaSelect.addEventListener('change', () => {
+                const categoriaSelecionada = categoriaSelect.value;
+                const sectionProdutos = document.getElementById('produtos');
+                sectionProdutos.innerHTML = '';
 
-        const produtosFiltrados = categoriaSelecionada == 'Todas as Categorias'
-            ? produtos
-            : produtos.filter(produto => produto.category == categoriaSelecionada);
+                const produtosFiltrados = categoriaSelecionada == 'Todas as Categorias'
+                    ? produtos
+                    : produtos.filter(produto => produto.category == categoriaSelecionada);
 
-        carregarProdutos(produtosFiltrados);
-    });
+                carregarProdutos(produtosFiltrados);
+            });
 
+            // Ordenação por preço
+            const ordenarTitulo = document.createElement('h3');
+            ordenarTitulo.textContent = 'Ordenar';
+            filtrosContainer.append(ordenarTitulo);
 
-    const ordenar = document.createElement('h3');
-    ordenar.textContent = 'Ordenar';
-    filtrosContainer.append(ordenar);
+            const ordenarSelect = document.createElement('select');
+            ordenarSelect.id = 'ordenar-select';
+            filtrosContainer.append(ordenarSelect);
 
-    const selected2 = document.createElement('select');
-    selected2.id = 'categoria-select';
-    filtrosContainer.append(selected2);
+            const ordemPadrao = document.createElement('option');
+            ordemPadrao.textContent = 'Ordenar pelo preço';
+            ordemPadrao.value = 'padrao';
+            ordenarSelect.append(ordemPadrao);
 
-    const ordem = document.createElement('option');
-    ordem.textContent = 'Ordenar pelo preço';
-    ordem.value = 'padrao';
-    selected2.append(ordem);
+            const ordemDecrescente = document.createElement('option');
+            ordemDecrescente.textContent = 'Preço Decrescente';
+            ordemDecrescente.value = 'Preço Decrescente';
+            ordenarSelect.append(ordemDecrescente);
 
-    const option = document.createElement('option');
-    option.textContent = 'Preço Decrescente';
-    option.value = 'Preço Decrescente';
-    selected2.append(option);
+            const ordemCrescente = document.createElement('option');
+            ordemCrescente.textContent = 'Preço Crescente';
+            ordemCrescente.value = 'Preço Crescente';
+            ordenarSelect.append(ordemCrescente);
 
-    const option2 = document.createElement('option');
-    option2.textContent = 'Preço Crescente';
-    option2.value = 'Preço Crescente'; 
-    selected2.append(option2);
+            ordenarSelect.addEventListener('change', () => {
+                const ordemSelecionada = ordenarSelect.value;
+                const sectionProdutos = document.getElementById('produtos');
+                sectionProdutos.innerHTML = '';
 
-    selected2.addEventListener('click', () => {
-        const ordemSelecionada = selected2.value;
-        const sectionProdutos = document.getElementById('produtos');
-        sectionProdutos.innerHTML = '';
+                let produtosOrdenados = produtos;
 
-        let produtosOrdenados = produtos;
+                if (ordemSelecionada == 'Preço Decrescente') {
+                    produtosOrdenados.sort((a, b) => b.price - a.price);
+                } else if (ordemSelecionada == 'Preço Crescente') {
+                    produtosOrdenados.sort((a, b) => a.price - b.price);
+                }
 
-        if (ordemSelecionada == 'Preço Decrescente') {
-            produtosOrdenados.sort((a, b) => b.price - a.price);
-        } else if (ordemSelecionada == 'Preço Crescente') {
-            produtosOrdenados.sort((a, b) => a.price - b.price);
-        }
+                carregarProdutos(produtosOrdenados);
+            });
 
-        carregarProdutos(produtosOrdenados);
-    });
+            // Barra de pesquisa
+            const pesquisaTitulo = document.createElement('h3');
+            pesquisaTitulo.textContent = 'Procurar';
+            filtrosContainer.append(pesquisaTitulo);
 
-    const procurar = document.createElement('h3');
-    procurar.textContent = 'Procurar';
-    filtrosContainer.append(procurar);
+            const barraPesquisa = document.createElement('input');
+            barraPesquisa.type = 'text';
+            barraPesquisa.placeholder = 'Pesquisar produto...';
+            barraPesquisa.id = 'barra-pesquisa';
+            filtrosContainer.append(barraPesquisa);
 
-    const selected3 = document.createElement('input');
-    selected3.type = 'text';
-    selected3.placeholder = 'Pesquisar produto...';
-    selected3.id = 'categoria-select';
-    filtrosContainer.append(selected3);
+            barraPesquisa.addEventListener('keyup', () => {
+                const termoPesquisa = barraPesquisa.value.toLowerCase();
+                const sectionProdutos = document.getElementById('produtos');
+                sectionProdutos.innerHTML = '';
 
-    selected3.addEventListener('keyup', () => {
-        const termo = selected3.value;
-        const sectionProdutos = document.getElementById('produtos');
-        sectionProdutos.innerHTML = '';
-        const produtosFiltrados = produtos.filter(produto => produto.title.includes(termo));
-        carregarProdutos(produtosFiltrados);
-    });
-    const sectionProdutos = document.getElementById('produtos');
-    sectionProdutos.before(filtrosContainer, sectionProdutos);
+                const produtosFiltrados = produtos.filter(produto =>
+                    produto.title.toLowerCase().includes(termoPesquisa)
+                );
+
+                carregarProdutos(produtosFiltrados);
+            });
+
+            const sectionProdutos = document.getElementById('produtos');
+            sectionProdutos.before(filtrosContainer, sectionProdutos);
+        })
+        .catch(error => console.error('Erro ao carregar categorias:', error));
 }
 
 function carregarProdutos(produtos) {
