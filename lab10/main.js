@@ -201,7 +201,7 @@ function carregarCarrinho() {
     title.textContent = 'Produtos Selecionados';
     sectionCarrinho.append(title);
 
-    const carrinho = JSON.parse(localStorage.getItem('carrinho'));
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
     if (carrinho.length > 0) {
         const carrinhoContainer = document.createElement('section');
@@ -223,12 +223,12 @@ function carregarCarrinho() {
         const totalElement = document.createElement('p');
         totalElement.classList.add('total');
         totalElement.textContent = `Custo total: ${total.toFixed(2)}€`;
-        
+
         const estudanteVerificar = document.createElement('h4');
         estudanteVerificar.classList.add('estudante');
-        estudanteVerificar.textContent = 'És estudante do DEISI?'; 
+        estudanteVerificar.textContent = 'És estudante do DEISI?';
 
-        const verificar = document.createElement('input');~
+        const verificar = document.createElement('input');
         verificar.classList.add('estudante');
         verificar.type = 'checkbox';
 
@@ -241,8 +241,16 @@ function carregarCarrinho() {
         desconto.type = 'text';
 
         const btn = document.createElement('button');
-        btn.classList.add('comprar');
+        btn.classList.add('btn');
         btn.textContent = 'Comprar';
+
+        const valorFinalElement = document.createElement('p');
+        valorFinalElement.classList.add('recibo');
+        valorFinalElement.textContent = '';
+
+        const referenciaElement = document.createElement('p');
+        referenciaElement.classList.add('recibo');
+        referenciaElement.textContent = '';
 
         comprar.append(totalElement);
         comprar.append(estudanteVerificar);
@@ -250,37 +258,36 @@ function carregarCarrinho() {
         comprar.append(cupao);
         comprar.append(desconto);
         comprar.append(btn);
+        comprar.append(valorFinalElement);
+        comprar.append(referenciaElement);
 
         btn.addEventListener('click', () => {
             const produtosIds = carrinho.map(produto => produto.id);
             const dadosDesconto = {
                 products: produtosIds,
                 student: verificar.checked,
-                coupon: desconto.value
+                coupon: desconto.value,
             };
-            
+
             fetch('https://deisishop.pythonanywhere.com/buy/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(dadosDesconto)
+                body: JSON.stringify(dadosDesconto),
             })
             .then(response => response.json())
-            .then (dados =>{
-    
-            const valorfinal = document.createElement('p');
-            valorfinal.classList.add('valor-final');
-            valorfinal.textContent = `Valor final a pagar (com eventuais descontos): ${dados.totalCost.toFixed(2)} €`;
-            
-            const referencia = document.createElement('p');
-            referencia.classList.add('referencia');
-            referencia.textContent = `Referência de pagamento: ${dados.reference}`;
-    
-            comprar.append(valorfinal);
-            comprar.append(referencia);
-            })  .catch(error => console.error('Erro:', error));
-    });
+            .then(dados => {
+                valorFinalElement.textContent = `Valor final a pagar (com eventuais descontos): ${dados.totalCost} €`;
+                referenciaElement.textContent = `Referência de pagamento: ${dados.reference}`;
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                valorFinalElement.textContent = `Erro na compra: ${error.message}`;
+                referenciaElement.textContent = '';
+            });
+        });
+
         sectionCarrinho.append(comprar);
     } else {
         const emptyMessage = document.createElement('p');
@@ -289,6 +296,7 @@ function carregarCarrinho() {
         sectionCarrinho.append(emptyMessage);
     }
 }
+
 
 function criarProdutoCarrinho(produto) {
     const article = document.createElement('article');

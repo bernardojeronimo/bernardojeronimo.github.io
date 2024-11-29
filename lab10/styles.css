@@ -290,25 +290,108 @@ footer p {
   margin: auto;
 }
 
-.comprar{
-  background-color: aliceblue;
+.comprar {
+  background-color: #ffffff;
   display: flex;
-  margin: 10px;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+  margin: 20px auto;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
 }
+
+.estudante{
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.cupao{
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.comprar input[type="text"] {
+  padding: 10px;
+  width: 40%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+.comprar input[type="text"]:focus {
+  border-color: #1674b1;
+  outline: none;
+}
+
+.comprar button {
+  margin-top: 15px;
+  background-color: #1674b1;
+  color: white;
+  padding: 12px 24px; 
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.recibo{
+  color: #16547d;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 17px;
+}
+
+
 .total {
+  margin-top: 20px;
   font-size: 24px;
   font-weight: bold;
   color: #1674b1;
 }
 
-.estudante{
-  
+/* comprar responsivo */
+
+@media (max-width: 768px) {
+  .comprar {
+    justify-content: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .comprar input[type="text"] {
+    width: 60%;
+  }
+
+  .comprar button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comprar {
+    flex-direction: column;
+    padding: 15px;
+    width: 95%;
+  }
+
+  .comprar input[type="text"] {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .comprar button {
+    font-size: 14px;
+    padding: 8px 16px; 
+  }
+  .recibo{
+    font-size: 15px;
+  }
 }
 
 .filtros{
