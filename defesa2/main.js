@@ -62,18 +62,18 @@ function carregarFiltros(produtos) {
             filtrosContainer.append(ordenarSelect);
 
             const ordemPadrao = document.createElement('option');
-            ordemPadrao.textContent = 'Ordenar pelo preço';
+            ordemPadrao.textContent = 'Ordenar pelas avaliações';
             ordemPadrao.value = 'padrao';
             ordenarSelect.append(ordemPadrao);
 
             const ordemDecrescente = document.createElement('option');
-            ordemDecrescente.textContent = 'Preço Decrescente';
-            ordemDecrescente.value = 'Preço Decrescente';
+            ordemDecrescente.textContent = 'Avaliações Decrescente';
+            ordemDecrescente.value = 'Avaliações Decrescente';
             ordenarSelect.append(ordemDecrescente);
 
             const ordemCrescente = document.createElement('option');
-            ordemCrescente.textContent = 'Preço Crescente';
-            ordemCrescente.value = 'Preço Crescente';
+            ordemCrescente.textContent = 'Avaliações Crescente';
+            ordemCrescente.value = 'Avaliações Crescente';
             ordenarSelect.append(ordemCrescente);
 
             ordenarSelect.addEventListener('change', () => {
@@ -83,10 +83,10 @@ function carregarFiltros(produtos) {
 
                 let produtosOrdenados = produtos;
 
-                if (ordemSelecionada == 'Preço Decrescente') {
-                    produtosOrdenados.sort((a, b) => b.price - a.price);
-                } else if (ordemSelecionada == 'Preço Crescente') {
-                    produtosOrdenados.sort((a, b) => a.price - b.price);
+                if (ordemSelecionada == 'Avaliações Decrescente') {
+                    produtosOrdenados.sort((a, b) => b.rating.count - a.rating.count);
+                } else if (ordemSelecionada == 'Avaliações Crescente') {
+                    produtosOrdenados.sort((a, b) => a.rating.count - b.rating.count);
                 }
 
                 carregarProdutos(produtosOrdenados);
@@ -109,11 +109,39 @@ function carregarFiltros(produtos) {
                 sectionProdutos.innerHTML = '';
 
                 const produtosFiltrados = produtos.filter(produto =>
-                    produto.title.toLowerCase().includes(termoPesquisa)
+                    produto.title.toLowerCase().includes(termoPesquisa) ||
+                    produto.description.toLowerCase().includes(termoPesquisa)
                 );
 
                 carregarProdutos(produtosFiltrados);
             });
+
+            const btn = document.createElement('button');
+            btn.textContent = 'Remover produtos';
+            btn.addEventListener('click', () => {
+                localStorage.removeItem('carrinho');
+                carregarCarrinho();
+            });
+            
+            filtrosContainer.append(btn);
+
+            const btnDes = document.createElement('button');
+            btnDes.textContent = 'menos info';
+            btnDes.addEventListener('click', () => {
+                const sectionProdutos = document.getElementById('produtos');
+                sectionProdutos.innerHTML = '';
+
+                const proddesc = document.querySelectorAll('.descricao');
+
+                produtos.forEach(produto => {
+                    const elemento = produto.removeItem('descricao');
+                    sectionpro.append(elemento);
+                });
+
+                carregarProdutos(elemento);
+            });
+            
+            filtrosContainer.append(btnDes);
             const sectionProdutos = document.getElementById('produtos');
             sectionProdutos.before(filtrosContainer, sectionProdutos);
         })
@@ -245,12 +273,24 @@ function carregarCarrinho() {
         desconto.classList.add('cupao');
         desconto.type = 'text';
 
+        const nome = document.createElement('h4');
+        cupao.classList.add('nome');
+        cupao.textContent = 'Insira um nome: ';
+
+        const nomeinput = document.createElement('input');
+        desconto.classList.add('nome');
+        desconto.type = 'text';
+
         const btn = document.createElement('button');
         btn.classList.add('btn');
         btn.textContent = 'Comprar';
 
         const valorFinalElement = document.createElement('p');
         valorFinalElement.classList.add('recibo');
+        valorFinalElement.textContent = '';
+
+        const valormensagem = document.createElement('p');
+        valorFinalElement.classList.add('mensagem');
         valorFinalElement.textContent = '';
 
         const referenciaElement = document.createElement('p');
@@ -262,9 +302,12 @@ function carregarCarrinho() {
         comprar.append(verificar);
         comprar.append(cupao);
         comprar.append(desconto);
+        comprar.append(nome);
+        comprar.append(nomeinput);
         comprar.append(btn);
         comprar.append(valorFinalElement);
         comprar.append(referenciaElement);
+        comprar.append(valormensagem);
 
         btn.addEventListener('click', () => {
             const produtosIds = carrinho.map(produto => produto.id);
@@ -272,6 +315,7 @@ function carregarCarrinho() {
                 products: produtosIds,
                 student: verificar.checked,
                 coupon: desconto.value,
+                name : nomeinput.value,
             };
 
             fetch('https://deisishop.pythonanywhere.com/buy/', {
@@ -285,6 +329,7 @@ function carregarCarrinho() {
                 .then(dados => {
                     valorFinalElement.textContent = `Valor final a pagar (com eventuais descontos): ${dados.totalCost} €`;
                     referenciaElement.textContent = `Referência de pagamento: ${dados.reference}`;
+                    valormensagem.textContent = `${dados.message}`;
                 })
                 .catch(error => {
                     console.error('Erro:', error);

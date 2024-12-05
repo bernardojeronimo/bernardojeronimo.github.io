@@ -1,0 +1,530 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  padding-top: 80px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #141312;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+
+
+header a {
+  color: #ded5d5;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+
+h1{
+  color: #b4d9f1;
+  padding: 2px;
+  text-decoration: underline rgb(175, 152, 152) double 2px;
+}
+
+header nav a {
+  color: rgb(160, 210, 253);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 4px;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #666;
+}
+
+h2{
+  display: flex;
+  color: #333;
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  
+}
+
+.pCont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+
+.produto {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.produto figure {
+  width: 100%;
+  height: 160px;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.produto figure img {
+  max-width: 100%;
+  max-height: 150px;
+}
+
+.produto-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.produto h2 {
+  margin: 0;
+  font-size: 14px;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.categoria {
+  display: inline-block;
+  padding: 7px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  font-size: 12px;
+  width: fit-content;
+}
+
+.descricao {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.4;
+  background-color: #ebeaea;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.produto-detalhes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.preco {
+  font-size: 20px;
+  color: #1885de;
+  font-weight: bold;
+}
+
+.rating {
+  color: #f1c40f;
+  font-size: 13px;
+}
+
+.pCont button {
+  background: #778c9e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pCont button:hover {
+  background: #1674b1;
+}
+
+.carrinho {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.carrinho:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.carrinho figure {
+  width: 100%;
+  height: 160px;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.carrinho figure img {
+  max-width: 100%;
+  max-height: 150px;
+}
+
+.carrinho h2 {
+  margin: 0;
+  font-size: 14px;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.categoria {
+  display: inline-block;
+  padding: 7px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  font-size: 12px;
+  width: fit-content;
+}
+
+.descricao {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.preco {
+  font-size: 20px;
+  color: #1885de;
+  font-weight: bold;
+}
+
+.cart-background {
+  background-color: #f0f0f0; 
+  min-height: 200px; 
+  padding: 20px;
+}
+
+.empty-cart-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+footer {
+  background: #141312;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+
+#carrinho {
+  background-color: #e6f2ff; 
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#carrinho h2 {
+  color: #1674b1;
+  margin-bottom: 20px;
+}
+
+.carrinho {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.carrinho button {
+  background-color: #c97d7d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+  margin: auto;
+  transition: background-color 0.3s;
+}
+
+.carrinho button:hover {
+  background-color: #ea4f4f;
+}
+
+.carrinho .preco{
+  margin: auto;
+}
+
+.comprar {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+}
+
+.estudante{
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.cupao{
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.comprar input[type="text"] {
+  padding: 10px;
+  width: 40%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+.comprar input[type="text"]:focus {
+  border-color: #1674b1;
+  outline: none;
+}
+
+.comprar button {
+  margin-top: 15px;
+  background-color: #1674b1;
+  color: white;
+  padding: 12px 24px; 
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.recibo{
+  color: #16547d;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 17px;
+}
+
+
+.total {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1674b1;
+}
+
+
+.filtros{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+.filtros h3{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.filtros select{
+  padding: 5px;
+  border-radius: 5px;
+}
+.filtros input {
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s;
+}
+
+/* comprar responsivo */
+
+@media (max-width: 768px) {
+  .comprar {
+    justify-content: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .comprar input[type="text"] {
+    width: 60%;
+  }
+
+  .comprar button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comprar {
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .comprar input[type="text"] {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .comprar button {
+    font-size: 14px;
+    padding: 8px 16px; 
+  }
+  .recibo{
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .pCont,
+  #carrinho .pCont {
+      grid-template-columns: repeat(3, 1fr);
+      width: 95%;
+      gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+      padding: 0;
+      padding-top: 80px;
+  }
+
+  .pCont,
+  #carrinho .pCont {
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      padding: 10px;
+      gap: 10px;
+  }
+
+  header {
+      flex-direction: column;
+      padding: 10px;
+  }
+
+  header nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  header nav a {
+      margin: 5px 0;
+      font-size: 18px;
+  }
+
+  h2 {
+      font-size: 24px;
+  }
+
+  .filtros {
+    flex-direction: column;
+    margin: 15px;
+  }
+
+  .filtros h3 {
+    padding: 5px 0;
+  }
+  .filtros select{
+    text-align: center;
+  }
+
+  .filtros select,
+  .filtros input {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .produto,
+  .carrinho {
+      flex-direction: column;
+  }
+
+  .pCont,
+  #carrinho .pCont {
+      grid-template-columns: 1fr;
+      width: 100%;
+      padding: 10px;
+      gap: 10px;
+  }
+
+  .produto figure,
+  .carrinho figure {
+      width: 100%;
+      height: 200px;
+  }
+
+  .produto-detalhes {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .preco {
+      margin-bottom: 10px;
+  }
+
+  .filtros {
+    flex-direction: column;
+  }
+
+  .filtros h3 {
+    padding: 5px 0;
+  }
+
+  .filtros select{
+    text-align: center;
+  }
+  .filtros select,
+  .filtros input {
+    width: 90%;
+  }
+}
+
