@@ -122,7 +122,7 @@ function carregarFiltros(produtos) {
                 localStorage.removeItem('carrinho');
                 carregarCarrinho();
             });
-            
+
             filtrosContainer.append(btn);
 
             const btnDes = document.createElement('button');
@@ -131,16 +131,15 @@ function carregarFiltros(produtos) {
                 const sectionProdutos = document.getElementById('produtos');
                 sectionProdutos.innerHTML = '';
 
-                const proddesc = document.querySelectorAll('.descricao');
+                const proddesc = document.querySelectorAll('descricao');
 
-                produtos.forEach(produto => {
-                    const elemento = produto.removeItem('descricao');
-                    sectionpro.append(elemento);
+                produtos.forEach(produto =>{
+                    produto.description.remove(proddesc);
+                    sectionProdutos.append(produto);
                 });
-
-                carregarProdutos(elemento);
+                carregarProdutos(sectionProdutos);
             });
-            
+
             filtrosContainer.append(btnDes);
             const sectionProdutos = document.getElementById('produtos');
             sectionProdutos.before(filtrosContainer, sectionProdutos);
@@ -315,7 +314,7 @@ function carregarCarrinho() {
                 products: produtosIds,
                 student: verificar.checked,
                 coupon: desconto.value,
-                name : nomeinput.value,
+                name: nomeinput.value,
             };
 
             fetch('https://deisishop.pythonanywhere.com/buy/', {
